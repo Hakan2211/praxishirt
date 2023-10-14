@@ -2,7 +2,7 @@
 
 import { useGLTF, useAnimations } from '@react-three/drei';
 
-import { use, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export function Kolibri(props) {
   const { nodes } = useGLTF('../models/kolibri/scene.gltf');
@@ -12,7 +12,7 @@ export function Kolibri(props) {
 
   useEffect(() => {
     const kolibri_action =
-      kolibri_animations.actions[Object.keys(kolibri_animations.actions)[1]];
+      kolibri_animations.actions[Object.keys(kolibri_animations.actions)[0]];
     kolibri_action.play();
   }, []);
 

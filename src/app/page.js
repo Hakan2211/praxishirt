@@ -76,10 +76,14 @@ export default function Home() {
             {/* <Logo route='/blob' scale={0.6} position={[0, 0, 0]} /> */}
             <Kolibri
               scale={4}
-              position={[0, 0.2, 2.5]}
+              position={[-1, 0, -3]}
               rotation={[0, Math.PI / 2 + 60, 0]}
             />
-            <Kolibri2 />
+            <Kolibri2
+              scale={4}
+              position={[2, 1, -3]}
+              rotation={[0, Math.PI / 2 + 60, 0]}
+            />
             <Sakura position={[-4.3, -3.7, -4.3]} scale={0.38} />
             <Common />
           </Suspense>
