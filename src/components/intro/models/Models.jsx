@@ -4,6 +4,7 @@ import Loader from '@/components/intro/loading/Loading';
 
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
+import HeadlineText3D from '@/components/intro/3dtext/Text';
 
 const View = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.View),
@@ -58,7 +59,7 @@ export default function Models() {
   return (
     <>
       <Loader />
-      <div className="w-full text-center md:w-3/5">
+      <div className="w-full text-center md:w-3/5 pointer-events-none">
         <View
           orbit
           className="absolute top-0 flex h-screen w-full flex-col items-center justify-center"
@@ -84,6 +85,7 @@ export default function Models() {
             <Sakura position={[-4.3, -3.7, -4.3]} scale={0.38} />
             <Common />
           </Suspense>
+          <HeadlineText3D />
         </View>
       </div>
     </>
