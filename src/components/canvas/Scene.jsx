@@ -6,9 +6,11 @@ import { r3f } from '@/components/helpers/Three';
 
 export default function Scene({ ...props }) {
   return (
-    <Canvas {...props}>
-      <r3f.Out />
-      <Preload all />
-    </Canvas>
+    <>
+      <Canvas {...props}>
+        <r3f.Out />
+        <Preload all />
+      </Canvas>
+    </>
   );
 }
