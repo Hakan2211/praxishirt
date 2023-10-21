@@ -14,3 +14,4 @@ export default function Scene({ ...props }) {
     </>
   );
 }
+// gl={{ clearAlpha: 0, clearColor: '#000000' }}
