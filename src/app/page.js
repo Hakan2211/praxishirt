@@ -22,7 +22,7 @@ export default function Home() {
             Wo Fachkompetenz und Fürsorge eine Brücke schlagen
           </p>
           <button
-            onClick={() => setSoundEnabled(!soundEnabled)}
+            onClick={() => setSoundEnabled(true)}
             className=" translate-y-20 text-white bg-red-300 w-40 h-16 text-3xl rounded-lg hover:cursor-pointe hover:bg-red-400"
           >
             <Link href={'/homepage'}>Start</Link>
