@@ -5,9 +5,7 @@ import { extend, useFrame, useThree } from '@react-three/fiber';
 import { useRef } from 'react';
 import { shaderMaterial } from '@react-three/drei';
 import { data } from '../data';
-// import { heartPoints } from '../heart_data';
 
-//const PATHS = data.icons[0].paths;
 const PATHS = data.economics[0].paths;
 
 const randomRange = (min, max) => Math.random() * (max - min) + min;
@@ -56,7 +54,7 @@ function Tube({ curve }) {
   useFrame(({ clock, mouse }) => {
     brainMat.current.uniforms.time.value = clock.getElapsedTime();
 
-    //brainMesh.current.rotation.y = clock.getElapsedTime() / 30;
+    brainMesh.current.rotation.y = clock.getElapsedTime() / 30;
 
     brainMat.current.uniforms.mouse.value = new THREE.Vector3(
       (mouse.x * viewport.width) / 2,

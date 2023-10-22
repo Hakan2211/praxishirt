@@ -7,7 +7,6 @@ import { extend, useFrame } from '@react-three/fiber';
 import { shaderMaterial } from '@react-three/drei';
 import { useEffect, useMemo, useRef } from 'react';
 
-//const PATHS = data.icons[0].paths;
 const PATHS = data.economics[0].paths;
 const randomRange = (min, max) => Math.random() * (max - min) + min;
 
@@ -78,7 +77,7 @@ export default function BrainParticles() {
     }
 
     brainGeo.current.attributes.position.needsUpdate = true;
-    //brainParticles.current.rotation.y = clock.getElapsedTime() / 30;
+    brainParticles.current.rotation.y = clock.getElapsedTime() / 30;
   });
 
   const BrainParticleMaterial = shaderMaterial(
