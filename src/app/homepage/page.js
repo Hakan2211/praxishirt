@@ -24,10 +24,10 @@ function Homepage() {
   const { soundEnabled } = useSoundEnabled();
   return (
     <>
-      <div className=" absolute top-0 left-0 w-full h-screen ">
+      {/* <div className=" absolute top-0 left-0 w-full h-screen z-10 ">
         <h1 className="text-white">Homepage</h1>
-      </div>
-      <View className=" !fixed  top-0 left-0 flex h-screen w-full -z-10 ">
+      </div> */}
+      <View className=" !fixed  top-0 left-0 flex h-screen w-full ">
         {soundEnabled && (
           <PositionalAudio
             distance={2}

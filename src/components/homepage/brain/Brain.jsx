@@ -56,7 +56,7 @@ function Tube({ curve }) {
   useFrame(({ clock, mouse }) => {
     brainMat.current.uniforms.time.value = clock.getElapsedTime();
 
-    //brainMesh.current.rotation.y = clock.getElapsedTime() / 30;
+    brainMesh.current.rotation.y = clock.getElapsedTime() / 30;
 
     brainMat.current.uniforms.mouse.value = new THREE.Vector3(
       (mouse.x * viewport.width) / 2,

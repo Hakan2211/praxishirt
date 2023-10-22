@@ -78,7 +78,7 @@ export default function BrainParticles() {
     }
 
     brainGeo.current.attributes.position.needsUpdate = true;
-    //brainParticles.current.rotation.y = clock.getElapsedTime() / 30;
+    brainParticles.current.rotation.y = clock.getElapsedTime() / 30;
   });
 
   const BrainParticleMaterial = shaderMaterial(
