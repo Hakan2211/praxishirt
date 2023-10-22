@@ -3,9 +3,9 @@ import React from 'react';
 
 export default function HomepageLayout({ children }) {
   return (
-    <section>
+    <div>
       <Navbar />
       {children}
-    </section>
+    </div>
   );
 }

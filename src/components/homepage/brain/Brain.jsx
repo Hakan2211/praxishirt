@@ -119,7 +119,7 @@ function Tube({ curve }) {
     <>
       <mesh
         ref={brainMesh}
-        position={[0, 0, 4]}
+        position={[0.5, 0, 4]}
         //rotation={[-Math.PI / 2, 0, 0]}
         scale={3}
       >
