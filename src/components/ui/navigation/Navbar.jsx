@@ -12,13 +12,22 @@ export default function Navbar() {
           </Link>
           <ul className="hidden md:flex gap-x-6 text-white text-lg hover:cursor-pointer">
             <li>
-              <Link href={'/homepage/leistungen'}>Leistungen</Link>
+              <Link
+                className=" hover:text-red-300"
+                href={'/homepage/leistungen'}
+              >
+                Leistungen
+              </Link>
             </li>
             <li>
-              <Link href={'/homepage/team'}>Team</Link>
+              <Link className=" hover:text-red-300" href={'/homepage/team'}>
+                Team
+              </Link>
             </li>
             <li>
-              <Link href={'/homepage/kontakt'}>Kontakt</Link>
+              <Link className=" hover:text-red-300" href={'/homepage/kontakt'}>
+                Kontakt
+              </Link>
             </li>
           </ul>
         </div>

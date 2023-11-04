@@ -21,7 +21,7 @@ PATHS.forEach((path) => {
   brainCurves.push(tempCurve);
 });
 
-export default function HeartParticles() {
+export default function HeartParticles(props) {
   let density = 10;
   let numberOfPoints = 10 * brainCurves.length;
   const myPoints = useRef([]);
@@ -77,7 +77,7 @@ export default function HeartParticles() {
     }
 
     brainGeo.current.attributes.position.needsUpdate = true;
-    //brainParticles.current.rotation.y = clock.getElapsedTime() / 30;
+    brainParticles.current.rotation.z = clock.getElapsedTime() / 30;
   });
 
   const BrainParticleMaterial = shaderMaterial(
@@ -117,12 +117,7 @@ export default function HeartParticles() {
 
   return (
     <>
-      <points
-        ref={brainParticles}
-        position={[0, 0, 4]}
-        rotation={[-Math.PI / 2, 0, 120]}
-        scale={0.5}
-      >
+      <points ref={brainParticles} {...props}>
         <bufferGeometry attach={'geometry'} ref={brainGeo}>
           <bufferAttribute
             attach="attributes-position"

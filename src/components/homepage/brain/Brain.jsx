@@ -38,7 +38,7 @@ PATHS.forEach((path) => {
   brainCurves.push(tempCurve);
 });
 
-function Tube({ curve }) {
+function Tube({ curve, position, scale, rotation }) {
   //   let points = [];
 
   //   for (let i = 0; i < 10; i++) {
@@ -119,9 +119,9 @@ function Tube({ curve }) {
     <>
       <mesh
         ref={brainMesh}
-        position={[0.5, 0, 4]}
+        position={position}
         //rotation={[-Math.PI / 2, 0, 0]}
-        scale={3}
+        scale={scale}
       >
         <tubeGeometry args={[curve, 128, 0.001, 3, false]} />
         <brainMaterial
@@ -138,11 +138,11 @@ function Tube({ curve }) {
   );
 }
 
-export default function Brain() {
+export default function Brain(props) {
   return (
     <>
       {brainCurves.map((curve, index) => (
-        <Tube curve={curve} key={index} />
+        <Tube {...props} curve={curve} key={index} />
       ))}
     </>
   );

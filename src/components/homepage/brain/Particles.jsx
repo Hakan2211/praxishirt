@@ -21,7 +21,7 @@ PATHS.forEach((path) => {
   brainCurves.push(tempCurve);
 });
 
-export default function BrainParticles() {
+export default function BrainParticles(props) {
   let density = 10;
   let numberOfPoints = 10 * brainCurves.length;
   const myPoints = useRef([]);
@@ -119,9 +119,8 @@ export default function BrainParticles() {
     <>
       <points
         ref={brainParticles}
-        position={[0.5, 0, 4]}
+        {...props}
         //rotation={[-Math.PI / 2, 0, 0]}
-        scale={3}
       >
         <bufferGeometry attach={'geometry'} ref={brainGeo}>
           <bufferAttribute

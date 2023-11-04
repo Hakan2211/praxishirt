@@ -22,7 +22,7 @@ PATHS.forEach((path) => {
   brainCurves.push(tempCurve);
 });
 
-export default function DNAParticles() {
+export default function DNAParticles(props) {
   let density = 10;
   let numberOfPoints = 10 * brainCurves.length;
   const myPoints = useRef([]);
@@ -78,7 +78,8 @@ export default function DNAParticles() {
     }
 
     brainGeo.current.attributes.position.needsUpdate = true;
-    //brainParticles.current.rotation.y = clock.getElapsedTime() / 30;
+    brainParticles.current.rotation.y = clock.getElapsedTime() / 20;
+    brainParticles.current.rotation.x = clock.getElapsedTime() / 20;
   });
 
   const BrainParticleMaterial = shaderMaterial(
@@ -123,6 +124,7 @@ export default function DNAParticles() {
         position={[0, 0, 4]}
         //rotation={[-Math.PI / 2, 0, 0]}
         scale={3}
+        {...props}
       >
         <bufferGeometry attach={'geometry'} ref={brainGeo}>
           <bufferAttribute

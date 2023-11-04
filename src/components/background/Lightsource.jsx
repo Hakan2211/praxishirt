@@ -8,13 +8,13 @@ import { isMobile } from 'react-device-detect';
 export default function Lightsource() {
   const [colors, setColors] = useState([
     '#1b8aae',
-    '#C5A507 ',
-    '#04728B ',
+    //'#C5A507',
+    //'#04728B',
     '#9f2402',
-    '#B52903  ',
+    '#B52903',
     '#10807a',
     '#C45045',
-    '#2f6140',
+    //'#2f6140',
     // "#064A60",
     // "#C5A507 ",
     // "#04728B ",

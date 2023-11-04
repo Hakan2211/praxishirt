@@ -2,6 +2,7 @@
 
 import { Plane, useTexture } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
+import { useRef } from 'react';
 import * as THREE from 'three';
 
 export default function Background() {
@@ -18,14 +19,18 @@ export default function Background() {
   displace.wrapS = displace.wrapT = THREE.RepeatWrapping;
   displace.repeat = new THREE.Vector2(1, 1);
   displace.anisotropy = 16;
+
+  const planeRef = useRef();
+
   return (
     <>
       <group>
         <Plane
-          args={[2, 1, 2, 2]}
+          ref={planeRef}
+          args={[3, 3, 2, 2]}
           position={[0, 0, 0]}
           rotation={[0, 0, 0]}
-          scale={[viewport.width / 2, viewport.height / 0.95, 1]}
+          scale={[viewport.width / 2, (viewport.height / 0.95) * 2, 1]}
         >
           <meshPhysicalMaterial
             color="#063058"

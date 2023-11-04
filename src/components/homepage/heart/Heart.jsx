@@ -40,7 +40,7 @@ PATHS.forEach((path) => {
   brainCurves.push(tempCurve);
 });
 
-function Tube({ curve }, props) {
+function Tube({ curve, position, scale, rotation }) {
   //   let points = [];
 
   //   for (let i = 0; i < 10; i++) {
@@ -56,7 +56,7 @@ function Tube({ curve }, props) {
   useFrame(({ clock, mouse }) => {
     brainMat.current.uniforms.time.value = clock.getElapsedTime();
 
-    //brainMesh.current.rotation.y = clock.getElapsedTime() / 30;
+    brainMesh.current.rotation.z = clock.getElapsedTime() / 30;
 
     brainMat.current.uniforms.mouse.value = new THREE.Vector3(
       (mouse.x * viewport.width) / 2,
@@ -121,11 +121,11 @@ function Tube({ curve }, props) {
     <>
       <mesh
         ref={brainMesh}
-        position={[0, 0, 4]}
-        rotation={[-Math.PI / 2, 0, 120]}
-        scale={0.5}
+        position={position}
+        rotation={rotation}
+        scale={scale}
       >
-        <tubeGeometry args={[curve, 128, 0.001, 3, false]} />
+        <tubeGeometry args={[curve, 128, 0.003, 3, false]} />
         <brainMaterial
           ref={brainMat}
           side={THREE.DoubleSide}
@@ -140,11 +140,11 @@ function Tube({ curve }, props) {
   );
 }
 
-export default function Heart() {
+export default function Heart(props) {
   return (
     <>
       {brainCurves.map((curve, index) => (
-        <Tube curve={curve} key={index} />
+        <Tube {...props} curve={curve} key={index} />
       ))}
     </>
   );
