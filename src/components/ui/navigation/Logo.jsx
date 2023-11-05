@@ -10,7 +10,7 @@ export default function Logo() {
         height={80}
         alt="Logo of the Homepage"
       />
-      <h3 className="tracking-widest">
+      <h3 className="tracking-widest text-white">
         <span className="text-red-300">P</span>raxis
         <span className="text-red-300">H</span>irt
       </h3>
