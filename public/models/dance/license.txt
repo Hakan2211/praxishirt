@@ -1,0 +1,11 @@
+Model Information:
+* title:	Let the neurons dance !
+* source:	https://sketchfab.com/3d-models/let-the-neurons-dance-d1f4f05d964c4b2ab59c92e6774aa09d
+* author:	Miguelangelo Rosario (https://sketchfab.com/miguelangelo2k)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Let the neurons dance !" (https://sketchfab.com/3d-models/let-the-neurons-dance-d1f4f05d964c4b2ab59c92e6774aa09d) by Miguelangelo Rosario (https://sketchfab.com/miguelangelo2k) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

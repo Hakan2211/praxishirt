@@ -1,0 +1,11 @@
+Model Information:
+* title:	Symbol of Love
+* source:	https://sketchfab.com/3d-models/symbol-of-love-91d1f7e940854c1fa3f95ac59d413745
+* author:	chromeball (https://sketchfab.com/chromeball)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Symbol of Love" (https://sketchfab.com/3d-models/symbol-of-love-91d1f7e940854c1fa3f95ac59d413745) by chromeball (https://sketchfab.com/chromeball) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

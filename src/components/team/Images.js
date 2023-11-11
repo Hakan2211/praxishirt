@@ -29,6 +29,7 @@ export const myImages = [
     year: 2017,
     rotation: [0, Math.PI / 2.5, 0],
     url: '../../../../team/filiz2.jpg',
+    career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
   {
     id: 3,
@@ -43,6 +44,7 @@ export const myImages = [
     year: 2017,
     rotation: [0, Math.PI / 2.5, 0],
     url: '../../../../team/filiz3.jpg',
+    career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
   //right
   {
@@ -58,6 +60,7 @@ export const myImages = [
     year: 2017,
     rotation: [0, -Math.PI / 2.5, 0],
     url: '../../../../team/filiz4.jpg',
+    career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
   {
     id: 5,
@@ -72,5 +75,6 @@ export const myImages = [
     year: 2017,
     rotation: [0, -Math.PI / 2.5, 0],
     url: '../../../../team/filiz5.jpg',
+    career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
 ];

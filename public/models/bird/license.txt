@@ -1,0 +1,11 @@
+Model Information:
+* title:	Abstract Bird
+* source:	https://sketchfab.com/3d-models/abstract-bird-6f279287a5ae409f982bf2e73d9f0485
+* author:	Heferum Games (https://sketchfab.com/HeferumGames)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Abstract Bird" (https://sketchfab.com/3d-models/abstract-bird-6f279287a5ae409f982bf2e73d9f0485) by Heferum Games (https://sketchfab.com/HeferumGames) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

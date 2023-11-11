@@ -1,0 +1,11 @@
+Model Information:
+* title:	Love is not Blind
+* source:	https://sketchfab.com/3d-models/love-is-not-blind-70c659b56b88430689a004d1af9c49e3
+* author:	reactorous (https://sketchfab.com/reactorous)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Love is not Blind" (https://sketchfab.com/3d-models/love-is-not-blind-70c659b56b88430689a004d1af9c49e3) by reactorous (https://sketchfab.com/reactorous) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

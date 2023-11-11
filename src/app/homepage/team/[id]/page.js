@@ -21,7 +21,6 @@ async function ProfilePage() {
   const { soundEnabled } = useSoundEnabled();
 
   const profile = myImages[id - 1];
-  console.log(profile);
 
   if (!profile) {
     return <h1>Profile not found</h1>;
