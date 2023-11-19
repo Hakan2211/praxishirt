@@ -3,6 +3,7 @@
 import Background from '@/components/background/Background';
 import Lightsource from '@/components/background/Lightsource';
 import { View } from '@/components/canvas/View';
+import { useMobile } from '@/components/context/IsMobileProvider';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
 import Brain from '@/components/homepage/brain/Brain';
 import BrainParticles from '@/components/homepage/brain/Particles';
@@ -11,13 +12,11 @@ import DNAParticles from '@/components/homepage/dna/DNAParticles';
 import Heart from '@/components/homepage/heart/Heart';
 import HeartParticles from '@/components/homepage/heart/HeartParticles';
 import Scroll from '@/components/scroll/Scroll';
-import { ScrollProvider } from '@/components/scroll/ScrollContext';
+
 import { PositionalAudio } from '@react-three/drei';
-import { useFrame, useThree } from '@react-three/fiber';
 
 import dynamic from 'next/dynamic';
-import React, { Suspense, useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import React, { Suspense } from 'react';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -26,12 +25,19 @@ const Common = dynamic(
 
 function Homepage() {
   const { soundEnabled } = useSoundEnabled();
+  const { isMobile } = useMobile();
 
   return (
     <>
-      <main className="w-full h-[300vh]">
+      <main className={`w-full h-[300vh] ${isMobile ? 'h-[300vh]' : ''} `}>
         <section className="w-full h-screen">
-          <div className="z-10 text-white absolute top-80 left-72 mt-5 p-16 w-2/3 h-2/4">
+          <div
+            className={`z-10 text-white absolute top-80 left-72 mt-5 p-16 w-2/3 h-2/4 ${
+              isMobile
+                ? 'left-1 p-10 w-full top-96 h-screen mt-0 translate-y-20'
+                : ''
+            } `}
+          >
             <h1 className="pb-3 mb-5">
               <span className="text-4xl pr-2 text-red-300">Praxis Hirt</span>
               {''}
@@ -59,22 +65,56 @@ function Homepage() {
             <Common />
 
             <Suspense fallback={null}>
-              <Brain position={[0.5, 0.1, 4]} scale={3} />
+              {isMobile ? (
+                <Brain position={[0, 0.2, 4]} scale={2} />
+              ) : (
+                <Brain position={[0.5, 0.1, 4]} scale={3} />
+              )}
 
-              <BrainParticles scale={3} position={[0.5, 0.1, 4]} />
+              {isMobile ? (
+                <BrainParticles position={[0, 0.2, 4]} scale={2} />
+              ) : (
+                <BrainParticles position={[0.5, 0.1, 4]} scale={3} />
+              )}
 
-              <Heart
-                scale={0.45}
-                position={[0.5, -1.2, 4]}
-                rotation={[-Math.PI / 2, 0, 120]}
-              />
-              <HeartParticles
-                scale={0.45}
-                position={[0.5, -1.2, 4]}
-                rotation={[-Math.PI / 2, 0, 120]}
-              />
-              <DNA position={[0.5, -2.3, 4]} scale={2} />
-              <DNAParticles position={[0.5, -2.3, 4]} scale={2} />
+              {isMobile ? (
+                <Heart
+                  scale={0.3}
+                  position={[0, -1.0, 4]}
+                  rotation={[-Math.PI / 2, 0, 120]}
+                />
+              ) : (
+                <Heart
+                  scale={0.45}
+                  position={[0.5, -1.2, 4]}
+                  rotation={[-Math.PI / 2, 0, 120]}
+                />
+              )}
+
+              {isMobile ? (
+                <HeartParticles
+                  scale={0.3}
+                  position={[0, -1, 4]}
+                  rotation={[-Math.PI / 2, 0, 120]}
+                />
+              ) : (
+                <HeartParticles
+                  scale={0.45}
+                  position={[0.5, -1.2, 4]}
+                  rotation={[-Math.PI / 2, 0, 120]}
+                />
+              )}
+
+              {isMobile ? (
+                <DNA position={[0, -2.0, 4]} scale={1.5} />
+              ) : (
+                <DNA position={[0.5, -2.3, 4]} scale={2} />
+              )}
+              {isMobile ? (
+                <DNAParticles position={[0, -2.0, 4]} scale={1.5} />
+              ) : (
+                <DNAParticles position={[0.5, -2.3, 4]} scale={2} />
+              )}
             </Suspense>
 
             <Suspense fallback={null}>
@@ -85,7 +125,11 @@ function Homepage() {
           </View>
         </section>
         <section className="w-full h-screen">
-          <div className="z-10 text-white absolute top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4">
+          <div
+            className={`z-10 text-white absolute top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4 ${
+              isMobile ? 'w-full p-10 left-1 h-screen mt-0' : ''
+            } `}
+          >
             <h1 className="pb-3 mb-5">
               <span className="text-4xl pr-2 text-red-300">Herz</span>
               {''}
@@ -104,7 +148,11 @@ function Homepage() {
           </div>
         </section>
         <section className="w-full h-screen">
-          <div className="z-10 text-white absolute top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4">
+          <div
+            className={`z-10 text-white absolute top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4 ${
+              isMobile ? 'left-1 p-10 w-full min-h-0 h-4/5 mt-0' : ''
+            }  `}
+          >
             <h1 className="pb-3 mb-5">
               <span className="text-4xl pr-2 text-red-300">Im Kern,</span>
               {''}

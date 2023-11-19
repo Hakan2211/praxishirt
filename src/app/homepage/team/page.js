@@ -10,6 +10,7 @@ import { Image, PositionalAudio } from '@react-three/drei';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
 import TeamPage from '@/components/team/TeamPage';
 import { myImages } from '@/components/team/Images';
+import { useMobile } from '@/components/context/IsMobileProvider';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -18,9 +19,14 @@ const Common = dynamic(
 
 function Team() {
   const { soundEnabled } = useSoundEnabled();
+  const { isMobile } = useMobile();
   return (
     <>
-      <div className="text-white z-10 absolute w-full h-20 text-3xl left-[45%] translate-y-20">
+      <div
+        className={`text-white z-10 absolute w-full h-20 text-3xl left-[45%] translate-y-20 ${
+          isMobile ? 'translate-y-20 -translate-x-12' : ''
+        } `}
+      >
         Unser Team
       </div>
       <View className=" !fixed  top-0 left-0 flex h-screen w-full ">

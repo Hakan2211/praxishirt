@@ -1,17 +1,28 @@
 'use client';
 
 import Models from '@/components/intro/models/Models';
+
 import Link from 'next/link';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
+import { useState, useEffect } from 'react';
+import MobileModels from '@/components/intro/models/MobileModels';
+import { useMobile } from '@/components/context/IsMobileProvider';
 
 export default function Home() {
   const { soundEnabled, setSoundEnabled } = useSoundEnabled();
+
+  const { isMobile } = useMobile();
+
   return (
     <>
-      <main className="bg-gradient-to-t from-slate-100 via-blue-100 to-sky-200 h-screen">
+      <main className="bg-gradient-to-t from-slate-100 via-blue-100 to-sky-200 h-screen w-full overflow-hidden">
         {/* jumbo */}
 
-        <div className="flex w-full h-2/6 flex-col items-center justify-center  text-center translate-y-full translate-x-60  ">
+        <div
+          className={`flex w-full h-2/6 flex-col items-center justify-center  text-center translate-y-full translate-x-60 ${
+            isMobile ? '-translate-x-0' : ''
+          }`}
+        >
           <span className="w-full text-4xl -translate-y-20">
             Willkommen bei
           </span>
@@ -29,7 +40,7 @@ export default function Home() {
           </button>
         </div>
 
-        <Models />
+        {isMobile ? <MobileModels /> : <Models />}
       </main>
     </>
   );

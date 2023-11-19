@@ -41,21 +41,12 @@ const Common = dynamic(
   { ssr: false }
 );
 
-const Kolibri = dynamic(
-  () => import('@/components/intro/kolibri/Kolibri').then((mod) => mod.Kolibri),
-  { ssr: false }
-);
 const Kolibri2 = dynamic(
   () =>
     import('@/components/intro/kolibri/Kolibri').then((mod) => mod.Kolibri2),
   { ssr: false }
 );
-const Sakura = dynamic(
-  () => import('@/components/intro/sakura/Sakura').then((mod) => mod.Sakura),
-  { ssr: false }
-);
-
-export default function Models() {
+export default function MobileModels() {
   return (
     <>
       <Loader />
@@ -65,27 +56,16 @@ export default function Models() {
           className="absolute top-0 flex h-screen w-full flex-col items-center justify-center"
         >
           <Suspense fallback={null}>
-            {/* <Logo route='/blob' scale={0.6} position={[0, 0, 0]} /> */}
-            <Kolibri
-              scale={4}
-              position={[-1, 0, -3]}
-              notion
-              rotation={[0, Math.PI / 2 + 60, 0]}
-            />
             <Kolibri2
               scale={4}
-              position={[2, 1, -3]}
+              position={[0.4, 1, -3]}
               rotation={[0, Math.PI / 2 + 60, 0]}
             />
 
             <Common />
           </Suspense>
 
-          <Suspense fallback={null}>
-            <Sakura position={[-4.3, -3.7, -4.3]} scale={0.38} />
-            <Common />
-          </Suspense>
-          <HeadlineText3D position={[0.2, 0.2, 0]} />
+          <HeadlineText3D position={[-0.6, 0.5, 0]} />
         </View>
       </div>
     </>

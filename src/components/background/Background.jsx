@@ -1,24 +1,11 @@
 'use client';
 
-import { Plane, useTexture } from '@react-three/drei';
+import { Plane } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
-import * as THREE from 'three';
 
 export default function Background() {
   const viewport = useThree((state) => state.viewport);
-
-  //const displace = useTexture('../displacementMap.jpg');
-  //const normal = useTexture('../normalmap.png');
-
-  //normal.anisotropy = 16;
-
-  //normal.wrapS = normal.wrapT = THREE.RepeatWrapping;
-  //normal.repeat = new THREE.Vector2(1, 1);
-
-  //displace.wrapS = displace.wrapT = THREE.RepeatWrapping;
-  //displace.repeat = new THREE.Vector2(1, 1);
-  //displace.anisotropy = 16;
 
   const planeRef = useRef();
 
@@ -36,10 +23,6 @@ export default function Background() {
             color="#063058"
             metalness={0.9}
             roughness={0.3}
-            //normalMap={normal}
-            // displacementMap={displace}
-            //displacementScale={0.1}
-            //normalScale={0.25}
           />
         </Plane>
       </group>

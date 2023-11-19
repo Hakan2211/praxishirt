@@ -11,6 +11,7 @@ import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
 import { Dance } from '@/components/leistungen/Dance';
 import { Chess } from '@/components/leistungen/Chess';
 import Scroll from '@/components/scroll/Scroll';
+import { useMobile } from '@/components/context/IsMobileProvider';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -24,15 +25,21 @@ const EyeBrain = dynamic(
 
 function Leistungen() {
   const { soundEnabled } = useSoundEnabled();
+
+  const { isMobile } = useMobile();
+  console.log(isMobile);
+
   return (
     <>
-      <main className="w-full h-[300vh]">
+      <main className={`w-full h-[300vh] ${isMobile ? 'h-[300vh]' : ''} `}>
         <section className="w-full h-screen">
-          <div className="z-10 text-white absolute top-80 left-72 mt-5 p-16 w-2/3 h-2/4">
-            <h1 className="pb-3 mb-5">
-              <span className="text-5xl pr-2 text-red-300">
-                Verhaltenstherapie
-              </span>
+          <div
+            className={`z-10 text-white absolute top-80 left-72 mt-5 p-16 w-2/3 h-2/4 ${
+              isMobile ? 'left-1 p-10 w-full h-screen mt-0' : ''
+            }`}
+          >
+            <h1 className={`pb-3 mb-5 text-5xl ${isMobile ? 'text-xl' : ''} `}>
+              <span className="pr-2 text-red-300">Verhaltenstherapie</span>
             </h1>
             <div className="text-xl leading-9 text-zinc-200 ">
               <p>Unsere Verhaltenstherapie bietet einen individuellen Weg</p>
@@ -72,19 +79,39 @@ function Leistungen() {
             )}
             <Common />
 
-            <Dance
-              scale={0.1}
-              position={[0.2, -0.1, 4]}
-              rotation={[Math.PI / 18, 0, 0]}
-            />
+            {isMobile ? (
+              <Dance
+                scale={0.1}
+                position={[-0.5, 0.2, 4]}
+                rotation={[Math.PI / 18, 0, 0]}
+              />
+            ) : (
+              <Dance
+                scale={0.1}
+                position={[0.2, -0.1, 4]}
+                rotation={[Math.PI / 18, 0, 0]}
+              />
+            )}
 
-            <EyeBrain
-              scale={20}
-              position={[0.6, -1.2, 4]}
-              rotation={[0, Math.PI / 2, 0]}
-            />
+            {isMobile ? (
+              <EyeBrain
+                scale={12}
+                position={[-0.1, -1.2, 4]}
+                rotation={[0, Math.PI / 2, 0]}
+              />
+            ) : (
+              <EyeBrain
+                scale={20}
+                position={[0.6, -1.2, 4]}
+                rotation={[0, Math.PI / 2, 0]}
+              />
+            )}
 
-            <Chess scale={0.007} position={[0.6, -2.7, 4]} />
+            {isMobile ? (
+              <Chess scale={0.004} position={[0, -2.7, 4]} />
+            ) : (
+              <Chess scale={0.007} position={[0.6, -2.7, 4]} />
+            )}
 
             <Suspense fallback={null}>
               <Background />
@@ -94,9 +121,13 @@ function Leistungen() {
           </View>
         </section>
         <section className="w-full h-screen">
-          <div className="z-10 text-white absolute top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4">
-            <h1 className="pb-3 mb-5">
-              <span className="text-4xl pr-2 text-red-300">
+          <div
+            className={`z-10 text-white absolute top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4  ${
+              isMobile ? 'left-1 p-10 w-full h-screen mt-0' : ''
+            } `}
+          >
+            <h1 className={`pb-3 mb-5 text-4xl ${isMobile ? 'text-xl' : ''} `}>
+              <span className="pr-2 text-red-300">
                 Neuropsychologische Diagnostik & Therapie
               </span>
             </h1>
@@ -128,9 +159,13 @@ function Leistungen() {
           </div>
         </section>
         <section className="w-full h-screen">
-          <div className="z-10 text-white absolute top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4">
-            <h1 className="pb-3 mb-5">
-              <span className="text-4xl pr-2 text-red-300">
+          <div
+            className={`z-10 text-white absolute top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4 ${
+              isMobile ? 'left-1 p-10 w-full h-screen mt-0' : ''
+            } `}
+          >
+            <h1 className={`pb-3 mb-5 text-4xl ${isMobile ? 'text-xl' : ''} `}>
+              <span className="pr-2 text-red-300">
                 Interkulturelle Psychotherapie
               </span>
             </h1>

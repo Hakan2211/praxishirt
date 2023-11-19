@@ -5,6 +5,7 @@ import React from 'react';
 import Logo from './Logo';
 import { usePathname } from 'next/navigation';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
+import { BiVolumeFull, BiVolumeMute } from 'react-icons/bi';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -52,14 +53,19 @@ export default function Navbar() {
                 Kontakt
               </Link>
             </li>
-            <div
-              onClick={() => setSoundEnabled(!soundEnabled)}
-              className={`w-16 h-8 rounded-full text-white text-center bg-red-300 ${
-                soundEnabled ? 'animate-pulse' : ''
-              } `}
-            >
-              Audio
-            </div>
+            {soundEnabled ? (
+              <BiVolumeFull
+                onClick={() => setSoundEnabled(!soundEnabled)}
+                size={30}
+                color="#fca5a5"
+              />
+            ) : (
+              <BiVolumeMute
+                onClick={() => setSoundEnabled(!soundEnabled)}
+                size={30}
+                color="#fca5a5"
+              />
+            )}
           </ul>
         </div>
       </div>

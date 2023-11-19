@@ -6,15 +6,26 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { easing } from 'maath';
 import Link from 'next/link';
+import { useMobile } from '../context/IsMobileProvider';
 
 const GOLDENRATIO = 1.61803398875;
 
 export default function TeamPage({ images }) {
   const { camera } = useThree();
-  camera.fov = 70;
+
+  const { isMobile } = useMobile();
+  let position;
+
+  if (isMobile) {
+    camera.fov = 120;
+    position = [-0.7, -0.5, 0];
+  } else {
+    camera.fov = 70;
+    position = [0, -0.5, 0];
+  }
 
   return (
-    <group position={[0, -0.5, 0]}>
+    <group position={position}>
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[50, 50]} />
         {/* <meshBasicMaterial color={'red'} /> */}
