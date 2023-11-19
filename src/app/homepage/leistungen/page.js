@@ -27,18 +27,19 @@ function Leistungen() {
   const { soundEnabled } = useSoundEnabled();
 
   const { isMobile } = useMobile();
-  console.log(isMobile);
 
   return (
     <>
       <main className={`w-full h-[300vh] ${isMobile ? 'h-[300vh]' : ''} `}>
         <section className="w-full h-screen">
           <div
-            className={`z-10 text-white absolute top-80 left-72 mt-5 p-16 w-2/3 h-2/4 ${
-              isMobile ? 'left-1 p-10 w-full h-screen mt-0' : ''
+            className={`z-10 text-white absolute top-80  ${
+              isMobile
+                ? 'left-1 p-10 w-full h-screen mt-0'
+                : 'left-72 mt-5 p-16 w-2/3 h-2/4'
             }`}
           >
-            <h1 className={`pb-3 mb-5 text-5xl ${isMobile ? 'text-xl' : ''} `}>
+            <h1 className={`pb-3 mb-5  ${isMobile ? 'text-xl' : 'text-5xl'} `}>
               <span className="pr-2 text-red-300">Verhaltenstherapie</span>
             </h1>
             <div className="text-xl leading-9 text-zinc-200 ">
@@ -122,11 +123,13 @@ function Leistungen() {
         </section>
         <section className="w-full h-screen">
           <div
-            className={`z-10 text-white absolute top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4  ${
-              isMobile ? 'left-1 p-10 w-full h-screen mt-0' : ''
+            className={`z-10 text-white absolute top-[90rem] ${
+              isMobile
+                ? 'left-1 p-10 w-full h-screen mt-0'
+                : 'left-72 mt-5 p-16 w-2/3 h-2/4'
             } `}
           >
-            <h1 className={`pb-3 mb-5 text-4xl ${isMobile ? 'text-xl' : ''} `}>
+            <h1 className={`pb-3 mb-5 ${isMobile ? 'text-xl' : 'text-4xl'} `}>
               <span className="pr-2 text-red-300">
                 Neuropsychologische Diagnostik & Therapie
               </span>
@@ -160,11 +163,13 @@ function Leistungen() {
         </section>
         <section className="w-full h-screen">
           <div
-            className={`z-10 text-white absolute top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4 ${
-              isMobile ? 'left-1 p-10 w-full h-screen mt-0' : ''
+            className={`z-10 text-white absolute top-[165rem]  ${
+              isMobile
+                ? 'left-1 p-10 w-full h-screen mt-0'
+                : 'left-72 mt-5 p-16 w-2/3 h-2/4'
             } `}
           >
-            <h1 className={`pb-3 mb-5 text-4xl ${isMobile ? 'text-xl' : ''} `}>
+            <h1 className={`pb-3 mb-5  ${isMobile ? 'text-xl' : 'text-4xl'} `}>
               <span className="pr-2 text-red-300">
                 Interkulturelle Psychotherapie
               </span>
