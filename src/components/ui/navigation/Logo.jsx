@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <div className="flex items-center w-64 justify-evenly hover:cursor-pointer">
       <Image
-        src="/../../logo/LogoPraxisHirt.png"
+        src="/../../../../logo/LogoPraxisHirt.png"
         width={80}
         height={80}
         alt="Logo of the Homepage"
