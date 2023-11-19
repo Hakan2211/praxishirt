@@ -1,65 +1,34 @@
 'use client';
 
-// import { useFrame, useThree } from '@react-three/fiber';
-// import React, { useEffect, useRef } from 'react';
-// import { useScroll } from './ScrollContext';
-
-// function Scroll() {
-//   const { setScrollY } = useScroll();
-//   const cameraRef = useRef();
-
-//   useEffect(() => {
-//     function onScroll() {
-//       setScrollY(window.scrollY);
-//     }
-//     window.addEventListener('scroll', onScroll);
-//     return () => {
-//       window.removeEventListener('scroll', onScroll);
-//     };
-//   }, [setScrollY]);
-
-//   const { camera } = useThree();
-//   cameraRef.current = camera;
-
-//   // Initialize targetY and dampingFactor
-//   let targetY = window.scrollY;
-//   let dampingFactor = 0.05;
-
-//   useFrame(() => {
-//     // Calculate the scroll distance
-//     const scrollDelta = window.scrollY - targetY;
-//     const damping = scrollDelta * dampingFactor;
-
-//     // Update the camera's position based on scroll and damping
-//     cameraRef.current.position.y -= damping;
-
-//     // Ensure the camera's orientation stays fixed
-//     cameraRef.current.rotation.x = 0; // Reset to a horizontal view
-//     cameraRef.current.rotation.z = 0; // Reset to a level view (adjust as needed)
-
-//     // Update the targetY
-//     targetY = window.scrollY;
-//   });
-
-//   return null;
-// }
-
 import { useFrame, useThree } from '@react-three/fiber';
 import React, { useEffect } from 'react';
 import { useScroll } from './ScrollContext';
 
 import * as THREE from 'three';
+import { useMobile } from '../context/IsMobileProvider';
 
 function Scroll() {
   const { scrollY, setScrollY } = useScroll();
+  const { isMobile } = useMobile();
 
   useEffect(() => {
     function onScroll() {
       setScrollY(window.scrollY);
     }
+
+    function handlePointerDown() {
+      setScrollY(window.scrollY);
+    }
+
     window.addEventListener('scroll', onScroll);
+    if (isMobile) {
+      window.addEventListener('pointerdown', handlePointerDown);
+    }
     return () => {
       window.removeEventListener('scroll', onScroll);
+      if (isMobile) {
+        window.removeEventListener('pointerdown', handlePointerDown);
+      }
     };
   }, [setScrollY]);
 
