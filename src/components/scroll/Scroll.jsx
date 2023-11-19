@@ -30,7 +30,7 @@ function Scroll() {
         window.removeEventListener('pointerdown', handlePointerDown);
       }
     };
-  }, [setScrollY]);
+  }, [setScrollY, isMobile]);
 
   const { camera } = useThree();
   const initialY = camera.position.y;
