@@ -1,7 +1,7 @@
 'use client';
 import { Image, MeshReflectorMaterial, useCursor } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { easing } from 'maath';
@@ -12,11 +12,12 @@ const GOLDENRATIO = 1.61803398875;
 
 export default function TeamPage({ images }) {
   const { camera } = useThree();
+  const pathname = usePathname();
 
   const { isMobile } = useMobile();
   let position;
 
-  if (isMobile) {
+  if (isMobile && pathname === '/homepage/team') {
     camera.fov = 120;
     position = [-0.7, -0.5, 0];
   } else {

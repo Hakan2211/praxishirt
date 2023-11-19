@@ -26,10 +26,11 @@ const Common = dynamic(
 function Homepage() {
   const { soundEnabled } = useSoundEnabled();
   const { isMobile } = useMobile();
+  console.log(isMobile);
 
   return (
     <>
-      <main className={`w-full h-[300vh] ${isMobile ? 'h-[300vh]' : ''} `}>
+      <main className={`w-full h-[300vh] `}>
         <section className="w-full h-screen">
           <div
             className={`z-10 text-white absolute top-80 left-72 mt-5 p-16 w-2/3 h-2/4 ${
