@@ -29,7 +29,11 @@ function Homepage() {
 
   return (
     <>
-      <main className={`w-full h-[300vh] `}>
+      <main
+        className={`w-full h-[300vh]  ${
+          isMobile ? 'pointer-events-auto' : 'pointer-events-none'
+        } `}
+      >
         <section className="w-full h-screen">
           <div
             className={`z-10 text-white absolute  ${
