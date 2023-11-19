@@ -20,8 +20,8 @@ export default function Home() {
         {/* jumbo */}
 
         <div
-          className={`flex w-full h-2/6 flex-col items-center justify-center  text-center translate-y-full translate-x-60 ${
-            isMobile ? 'translate-x-1' : ''
+          className={`flex w-full h-2/6 flex-col items-center justify-center  text-center translate-y-full ${
+            isMobile ? 'translate-x-0' : 'translate-x-60'
           }`}
         >
           <span className="w-full text-4xl -translate-y-20">
