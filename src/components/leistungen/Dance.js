@@ -13,7 +13,7 @@ export function Dance(props) {
   useEffect(() => {
     const action = actions[Object.keys(actions)[0]];
     action.play();
-  }, []);
+  }, [actions]);
 
   return (
     <group ref={group} {...props} dispose={null}>

@@ -1,11 +1,11 @@
 'use client';
 import { Image, MeshReflectorMaterial, useCursor } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useParams, usePathname, useRouter } from 'next/navigation';
-import React, { useRef, useEffect, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import React, { useRef, useState } from 'react';
 import * as THREE from 'three';
 import { easing } from 'maath';
-import Link from 'next/link';
+
 import { useMobile } from '../context/IsMobileProvider';
 
 const GOLDENRATIO = 1.61803398875;
@@ -145,6 +145,7 @@ function Frame({ url, id, c = new THREE.Color(), ...props }) {
           ref={image}
           url={url}
           position={[0, 0, 0.7]}
+          alt="Bilder von Teammitgliedern"
         />
       </mesh>
     </group>

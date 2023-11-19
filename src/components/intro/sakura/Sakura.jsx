@@ -11,7 +11,7 @@ export function Sakura(props) {
     const sakura_action =
       sakura_animations.actions[Object.keys(sakura_animations.actions)[0]];
     sakura_action.play();
-  }, []);
+  }, [sakura_animations.actions]);
 
   return <primitive {...props} object={sakura.scene} />;
 }

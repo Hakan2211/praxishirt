@@ -4,7 +4,7 @@ import Models from '@/components/intro/models/Models';
 
 import Link from 'next/link';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
-import { useState, useEffect } from 'react';
+
 import MobileModels from '@/components/intro/models/MobileModels';
 import { useMobile } from '@/components/context/IsMobileProvider';
 
@@ -27,9 +27,7 @@ export default function Home() {
           <span className="w-full text-4xl -translate-y-20">
             Willkommen bei
           </span>
-          {/* <h1 className="hidden my-4 text-5xl font-bold leading-tight">
-            Praxis Hirt
-          </h1> */}
+
           <p className="mb-8 text-4xl leading-normal translate-y-8">
             Wo Fachkompetenz und Fürsorge eine Brücke schlagen
           </p>

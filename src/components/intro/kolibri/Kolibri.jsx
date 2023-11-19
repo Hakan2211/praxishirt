@@ -14,7 +14,7 @@ export function Kolibri(props) {
     const kolibri_action =
       kolibri_animations.actions[Object.keys(kolibri_animations.actions)[0]];
     kolibri_action.play();
-  }, []);
+  }, [kolibri_animations.actions]);
 
   return <primitive object={nodes.Sketchfab_Scene} {...props}></primitive>;
 }
@@ -30,7 +30,7 @@ export function Kolibri2(props) {
     const kolibri2_action =
       kolibri2_animations.actions[Object.keys(kolibri2_animations.actions)[0]];
     kolibri2_action.play();
-  }, []);
+  }, [kolibri2_animations.actions]);
 
   return <primitive {...props} object={kolibri2.scene} />;
 }

@@ -16,7 +16,7 @@ const Common = dynamic(
   { ssr: false }
 );
 
-async function ProfilePage() {
+function ProfilePage() {
   const { id } = useParams();
   const { soundEnabled } = useSoundEnabled();
 

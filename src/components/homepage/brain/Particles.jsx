@@ -37,7 +37,7 @@ export default function BrainParticles(props) {
       );
     }
     return new Float32Array(positions);
-  }, []);
+  }, [numberOfPoints]);
 
   let randomSize = useMemo(() => {
     let randomSize = [];
@@ -45,7 +45,7 @@ export default function BrainParticles(props) {
       randomSize.push(randomRange(0.3, 1));
     }
     return new Float32Array(randomSize);
-  }, []);
+  }, [numberOfPoints]);
 
   useEffect(() => {
     for (let i = 0; i < brainCurves.length; i++) {
@@ -58,7 +58,7 @@ export default function BrainParticles(props) {
         });
       }
     }
-  }, []);
+  }, [density]);
 
   useFrame(({ clock }) => {
     let curPositions = brainGeo.current.attributes.position.array;
