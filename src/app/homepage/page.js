@@ -26,16 +26,17 @@ const Common = dynamic(
 function Homepage() {
   const { soundEnabled } = useSoundEnabled();
   const { isMobile } = useMobile();
+  console.log(isMobile);
 
   return (
     <>
       <main className={`w-full h-[300vh] `}>
         <section className="w-full h-screen">
           <div
-            className={`z-10 text-white absolute top-80 left-72 mt-5 p-16 w-2/3 h-2/4 ${
+            className={`z-10 text-white absolute  ${
               isMobile
                 ? 'left-1 p-10 w-full top-96 h-screen mt-0 translate-y-20'
-                : ''
+                : 'top-80 left 72 mt-5 p-16 w-2/3 h-2/4'
             } `}
           >
             <h1 className="pb-3 mb-5">
@@ -126,8 +127,10 @@ function Homepage() {
         </section>
         <section className="w-full h-screen">
           <div
-            className={`z-10 text-white absolute top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4 ${
-              isMobile ? 'w-full p-10 left-1 h-screen mt-0' : ''
+            className={`z-10 text-white absolute  ${
+              isMobile
+                ? 'w-full p-10 left-1 h-screen mt-0 translate-y-96'
+                : 'top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4'
             } `}
           >
             <h1 className="pb-3 mb-5">
@@ -149,8 +152,10 @@ function Homepage() {
         </section>
         <section className="w-full h-screen">
           <div
-            className={`z-10 text-white absolute top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4 ${
-              isMobile ? 'left-1 p-10 w-full min-h-0 h-4/5 mt-0' : ''
+            className={`z-10 text-white absolute  ${
+              isMobile
+                ? 'left-1 p-10 w-full min-h-0 h-4/5 mt-0 translate-y-96'
+                : 'top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4'
             }  `}
           >
             <h1 className="pb-3 mb-5">

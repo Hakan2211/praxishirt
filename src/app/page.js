@@ -12,7 +12,6 @@ export default function Home() {
   const { soundEnabled, setSoundEnabled } = useSoundEnabled();
 
   const { isMobile } = useMobile();
-  console.log(isMobile);
 
   return (
     <>
