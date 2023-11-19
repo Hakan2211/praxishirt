@@ -12,6 +12,7 @@ export default function Home() {
   const { soundEnabled, setSoundEnabled } = useSoundEnabled();
 
   const { isMobile } = useMobile();
+  console.log(isMobile);
 
   return (
     <>
@@ -20,7 +21,7 @@ export default function Home() {
 
         <div
           className={`flex w-full h-2/6 flex-col items-center justify-center  text-center translate-y-full translate-x-60 ${
-            isMobile ? '-translate-x-0' : ''
+            isMobile ? 'translate-x-0' : ''
           }`}
         >
           <span className="w-full text-4xl -translate-y-20">
