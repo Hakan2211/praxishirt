@@ -35,7 +35,7 @@ function Homepage() {
             className={`z-10 text-white absolute  ${
               isMobile
                 ? 'left-1 p-10 w-full top-96 h-screen mt-0 translate-y-20'
-                : 'top-80 left 72 mt-5 p-16 w-2/3 h-2/4'
+                : 'top-80 left-72 mt-5 p-16 w-2/3 h-2/4'
             } `}
           >
             <h1 className="pb-3 mb-5">
