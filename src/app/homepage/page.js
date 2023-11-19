@@ -26,7 +26,6 @@ const Common = dynamic(
 function Homepage() {
   const { soundEnabled } = useSoundEnabled();
   const { isMobile } = useMobile();
-  console.log(isMobile);
 
   return (
     <>
