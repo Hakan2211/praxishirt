@@ -34,17 +34,17 @@ function Kontakt() {
     <>
       <div
         className={`absolute  z-10 text-white w-full  flex items-center justify-center py-12 ${
-          isMobile ? 'h-[150vh]' : ''
+          isMobile ? 'h-[150vh]' : 'h-screen'
         } `}
       >
         <div
-          className={`space-y-8 max-w-xl w-full  mx-auto p-8 bg-gray-800 rounded-lg ${
-            isMobile ? 'w-4/5' : ''
+          className={`space-y-8 max-w-xl  mx-auto p-8 bg-gray-800 rounded-lg ${
+            isMobile ? 'w-4/5' : 'w-full'
           } `}
         >
           <h2
-            className={`text-5xl font-bold text-center ${
-              isMobile ? 'text-xl' : ''
+            className={`font-bold text-center ${
+              isMobile ? 'text-xl' : 'text-5xl'
             } `}
           >
             Kontaktiere uns
@@ -52,7 +52,7 @@ function Kontakt() {
           <form onSubmit={sendEmail} className="space-y-5">
             <div className="space-y-2 flex flex-col">
               <label
-                className={`text-3xl ${isMobile ? 'text-xl' : ''} `}
+                className={`${isMobile ? 'text-xl' : 'text-3xl'} `}
                 htmlFor="name"
               >
                 Name
@@ -60,8 +60,8 @@ function Kontakt() {
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className={`bg-gray-700 rounded-lg text-2xl p-3 h-12 text-white border-none placeholder:text-2xl placeholder:p-3 ${
-                  isMobile ? 'placeholder:text-lg' : ''
+                className={`bg-gray-700 rounded-lg text-2xl p-3 h-12 text-white border-none  placeholder:p-3 ${
+                  isMobile ? 'placeholder:text-lg' : 'placeholder:text-2xl'
                 } `}
                 id="name"
                 placeholder="Gib deinen Namen ein"
@@ -77,8 +77,8 @@ function Kontakt() {
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`bg-gray-700 rounded-lg text-2xl p-3 h-12 text-white border-none placeholder:text-2xl placeholder:p-3 ${
-                  isMobile ? 'placeholder:text-lg' : ''
+                className={`bg-gray-700 rounded-lg text-2xl p-3 h-12 text-white border-none  placeholder:p-3 ${
+                  isMobile ? 'placeholder:text-lg' : 'placeholder:text-2xl'
                 } `}
                 id="email"
                 placeholder="Gib deine Email-Adresse ein"
@@ -87,7 +87,7 @@ function Kontakt() {
             </div>
             <div className="space-y-2 flex flex-col">
               <label
-                className={`text-3xl ${isMobile ? 'text-xl' : ''} `}
+                className={`${isMobile ? 'text-xl' : 'text-3xl'} `}
                 htmlFor="message"
               >
                 Nachricht
@@ -95,16 +95,16 @@ function Kontakt() {
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className={`bg-gray-700 rounded-lg text-2xl p-3 text-white border-none min-h-[100px] h-44 placeholder:text-2xl placeholder:p-3 ${
-                  isMobile ? 'placeholder:text-lg' : ''
+                className={`bg-gray-700 rounded-lg text-2xl p-3 text-white border-none min-h-[100px] h-44  placeholder:p-3 ${
+                  isMobile ? 'placeholder:text-lg' : 'placeholder:text-2xl'
                 } `}
                 id="message"
                 placeholder="Gib deine Nachricht ein"
               />
             </div>
             <button
-              className={`w-full h-12 text-3xl rounded-lg bg-red-300 hover:bg-red-400 transition-colors ${
-                isMobile ? 'text-xl' : ''
+              className={`w-full h-12  rounded-lg bg-red-300 hover:bg-red-400 transition-colors ${
+                isMobile ? 'text-xl' : 'text-3xl'
               }`}
             >
               Senden
@@ -113,8 +113,8 @@ function Kontakt() {
         </div>
       </div>
       <View
-        className={`!fixed  top-0 left-0 flex h-screen w-full ${
-          isMobile ? 'h-[200vh]' : ''
+        className={`!fixed  top-0 left-0 flex  w-full ${
+          isMobile ? 'h-[200vh]' : 'h-screen'
         }  `}
       >
         {soundEnabled && (

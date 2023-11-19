@@ -24,7 +24,7 @@ function Team() {
     <>
       <div
         className={`text-white z-10 absolute w-full h-20 text-3xl left-[45%] translate-y-20 ${
-          isMobile ? 'translate-y-20 -translate-x-12' : ''
+          isMobile ? ' -translate-x-12' : ''
         } `}
       >
         Unser Team
