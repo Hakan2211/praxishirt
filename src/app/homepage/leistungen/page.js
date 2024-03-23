@@ -102,7 +102,7 @@ function Leistungen() {
             {isMobile ? (
               <Neuron
                 scale={0.08}
-                position={[-0.6, -1.2, 4]}
+                position={[0.3, -1.2, 4]}
                 rotation={[0, Math.PI / 2, 0]}
               />
             ) : (
