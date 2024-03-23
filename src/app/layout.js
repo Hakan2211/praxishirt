@@ -8,7 +8,7 @@ import IsMobileProvider from '@/components/context/IsMobileProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Praxishirt',
+  title: 'Praxishirt - Psychotherapie in Bruchsal',
   description: 'die Psychotherapie in Bruchsal, geleitet bei Filiz Hirt',
 };
 

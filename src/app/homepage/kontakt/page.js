@@ -11,6 +11,8 @@ import { PositionalAudio } from '@react-three/drei';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
 import { useMobile } from '@/components/context/IsMobileProvider';
 import Scroll from '@/components/scroll/Scroll';
+import { sendEmail } from '@/actions/sendEmail';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -26,12 +28,9 @@ function Kontakt() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const sendEmail = async (e) => {
-    e.preventDefault();
-  };
-
   return (
     <>
+      {' '}
       <div
         className={`absolute  z-10 text-white w-full  flex items-center justify-center py-12 ${
           isMobile ? 'h-[150vh]' : 'h-screen'
@@ -42,6 +41,8 @@ function Kontakt() {
             isMobile ? 'w-4/5' : 'w-full'
           } `}
         >
+          {' '}
+          <Toaster position="top-right" />
           <h2
             className={`font-bold text-center ${
               isMobile ? 'text-xl' : 'text-5xl'
@@ -49,7 +50,23 @@ function Kontakt() {
           >
             Kontaktiere uns
           </h2>
-          <form onSubmit={sendEmail} className="space-y-5">
+          <form
+            action={async (formData) => {
+              const { data, error } = await sendEmail(formData);
+
+              if (error) {
+                toast.error('Nachricht konnte nicht gesendet werden', {
+                  error,
+                });
+                return;
+              }
+              toast.success('Nachricht wurde gesendet');
+              setName('');
+              setEmail('');
+              setMessage('');
+            }}
+            className="space-y-5"
+          >
             <div className="space-y-2 flex flex-col">
               <label
                 className={`${isMobile ? 'text-xl' : 'text-3xl'} `}
@@ -58,7 +75,9 @@ function Kontakt() {
                 Name
               </label>
               <input
+                name="senderName"
                 value={name}
+                maxLength={50}
                 onChange={(e) => setName(e.target.value)}
                 className={`bg-gray-700 rounded-lg text-2xl p-3 h-12 text-white border-none  placeholder:p-3 ${
                   isMobile ? 'placeholder:text-lg' : 'placeholder:text-2xl'
@@ -75,7 +94,10 @@ function Kontakt() {
                 Email
               </label>
               <input
+                name="senderEmail"
+                required
                 value={email}
+                maxLength={500}
                 onChange={(e) => setEmail(e.target.value)}
                 className={`bg-gray-700 rounded-lg text-2xl p-3 h-12 text-white border-none  placeholder:p-3 ${
                   isMobile ? 'placeholder:text-lg' : 'placeholder:text-2xl'
@@ -93,6 +115,7 @@ function Kontakt() {
                 Nachricht
               </label>
               <textarea
+                name="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className={`bg-gray-700 rounded-lg text-2xl p-3 text-white border-none min-h-[100px] h-44  placeholder:p-3 ${
@@ -103,6 +126,7 @@ function Kontakt() {
               />
             </div>
             <button
+              type="submit"
               className={`w-full h-12  rounded-lg bg-red-300 hover:bg-red-400 transition-colors ${
                 isMobile ? 'text-xl' : 'text-3xl'
               }`}
