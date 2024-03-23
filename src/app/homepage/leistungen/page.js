@@ -12,14 +12,19 @@ import { Dance } from '@/components/leistungen/Dance';
 import { Chess } from '@/components/leistungen/Chess';
 import Scroll from '@/components/scroll/Scroll';
 import { useMobile } from '@/components/context/IsMobileProvider';
+// import { Neuron } from '@/components/leistungen/Neuron';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
   { ssr: false }
 );
 
-const EyeBrain = dynamic(
-  () => import('@/components/leistungen/eyeBrain').then((mod) => mod.EyeBrain),
+// const EyeBrain = dynamic(
+//   () => import('@/components/leistungen/eyeBrain').then((mod) => mod.EyeBrain),
+//   { ssr: false }
+// );
+const Neuron = dynamic(
+  () => import('@/components/leistungen/Neuron').then((mod) => mod.Neuron),
   { ssr: false }
 );
 
@@ -95,15 +100,15 @@ function Leistungen() {
             )}
 
             {isMobile ? (
-              <EyeBrain
-                scale={12}
-                position={[-0.1, -1.2, 4]}
+              <Neuron
+                scale={0.08}
+                position={[-0.6, -1.2, 4]}
                 rotation={[0, Math.PI / 2, 0]}
               />
             ) : (
-              <EyeBrain
-                scale={20}
-                position={[0.6, -1.2, 4]}
+              <Neuron
+                scale={0.2}
+                position={[0.7, -1.4, 4]}
                 rotation={[0, Math.PI / 2, 0]}
               />
             )}
