@@ -10,6 +10,8 @@ import Lightsource from '@/components/background/Lightsource';
 import dynamic from 'next/dynamic';
 import { PositionalAudio } from '@react-three/drei';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
+import Link from 'next/link';
+import LeftArrow from '@/components/icons/left-arrow';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -42,7 +44,13 @@ function ProfilePage() {
         </Suspense>
         <Common />
       </View>
-      <div className="z-10 absolute flex flex-col md:flex-row gap-6 h-screen md:h-auto p-20">
+      <div className="z-10 absolute flex flex-col md:flex-row gap-6  md:h-auto p-8 md:p-20">
+        <Link
+          href={'/homepage/team'}
+          className="hover:text-red-300 duration-300 ease-in-out transition-colors self-start"
+        >
+          <LeftArrow className="w-6 h-6 text-slate-50 hover:text-red-300 duration-300 ease-in-out transition-colors " />
+        </Link>
         <div className="w-full md:w-1/3 h-1/2 md:h-full overflow-y-auto">
           <Image
             alt={profile.name}
@@ -68,6 +76,7 @@ function ProfilePage() {
             </p>
           </div>
         </div>
+
         <div className="w-full md:w-2/3 h-1/2 md:h-full overflow-y-auto">
           <h2 className="text-4xl font-bold text-white">Laufbahn</h2>
           <div className="mt-6 relative">

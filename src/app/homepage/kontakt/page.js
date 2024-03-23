@@ -135,6 +135,11 @@ function Kontakt() {
             </button>
           </form>
         </div>
+      </div>{' '}
+      <div className="absolute translate-y-96 md:translate-y-0 bottom-0 right-10 md:right-[660px] z-10 duration-300 ease-in-out transition-colors hover:text-red-300 hover:cursor-pointer  text-slate-50">
+        <a href="https://www.praxishirt.de" target="__blank">
+          <span>Impressum</span>
+        </a>
       </div>
       <View
         className={`!fixed  top-0 left-0 flex  w-full ${
