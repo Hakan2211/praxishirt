@@ -48,7 +48,7 @@ function ProfilePage() {
             alt={profile.name}
             className="w-full rounded-lg object-cover"
             height={300}
-            src={`/${profile.url}`}
+            src={profile.url}
             style={{
               aspectRatio: '300/300',
               objectFit: 'cover',

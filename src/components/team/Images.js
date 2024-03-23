@@ -12,7 +12,7 @@ export const myImages = [
     role: 'Diplom Psychologin und Psychotherapeutin',
     year: 2017,
     rotation: [0, 0, 0],
-    url: '../../../../team/filiz.jpg',
+    url: '/team/filiz.jpg',
     career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
   //left
@@ -28,7 +28,7 @@ export const myImages = [
     role: 'Diplom Psychologin und Psychotherapeutin',
     year: 2017,
     rotation: [0, Math.PI / 2.5, 0],
-    url: '../../../../team/filiz2.jpg',
+    url: '/team/female_placeholder.png',
     career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
   {
@@ -43,7 +43,7 @@ export const myImages = [
     role: 'Diplom Psychologin und Psychotherapeutin',
     year: 2017,
     rotation: [0, Math.PI / 2.5, 0],
-    url: '../../../../team/filiz3.jpg',
+    url: '/team/female_placeholder.png',
     career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
   //right
@@ -59,7 +59,7 @@ export const myImages = [
     role: 'Diplom Psychologin und Psychotherapeutin',
     year: 2017,
     rotation: [0, -Math.PI / 2.5, 0],
-    url: '../../../../team/filiz4.jpg',
+    url: '/team/stellenanzeige.jpg',
     career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
   {
@@ -74,7 +74,7 @@ export const myImages = [
     role: 'Diplom Psychologin und Psychotherapeutin',
     year: 2017,
     rotation: [0, -Math.PI / 2.5, 0],
-    url: '../../../../team/filiz5.jpg',
+    url: '/team/male_placeholder.png',
     career: { 2020: 'Zalando', 2021: 'Praxis Hirt', 2023: 'Google' },
   },
 ];

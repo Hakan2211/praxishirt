@@ -16,13 +16,13 @@ export default function ContactFormEmail({ message, senderEmail, senderName }) {
   return (
     <Html>
       <Head />
-      <Preview>Neue Nachricht von deiner Seite Ebysrelaxing</Preview>
+      <Preview>Neue Nachricht von deiner Seite/Homepage PraxisHirt</Preview>
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>
             <Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
               <Heading className="leading-tight">
-                Du hast folgende Nachricht von deiner Seite Ebysrelaxing von{' '}
+                Du hast folgende Nachricht von deiner Seite PraxisHirt von{' '}
                 {senderName} erhalten:
               </Heading>
               <Text>{senderName}:</Text>

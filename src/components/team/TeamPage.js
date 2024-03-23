@@ -146,6 +146,7 @@ function Frame({ url, id, c = new THREE.Color(), ...props }) {
           url={url}
           position={[0, 0, 0.7]}
           alt="Bilder von Teammitgliedern"
+          scale={[0.2, 0.2, 0.2]}
         />
       </mesh>
     </group>

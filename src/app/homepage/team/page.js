@@ -23,7 +23,7 @@ function Team() {
   return (
     <>
       <div
-        className={`text-white z-10 absolute w-full h-20 text-3xl left-[45%] translate-y-20 ${
+        className={`text-white z-10 absolute h-20 text-3xl left-[45%] translate-y-20 ${
           isMobile ? ' -translate-x-12' : ''
         } `}
       >
