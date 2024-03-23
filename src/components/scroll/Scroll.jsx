@@ -34,23 +34,18 @@ function Scroll() {
 
   const { camera } = useThree();
   const initialY = camera.position.y;
-  const dampingFactor = 0.001; // Adjust this value to control the damping effect
+  const dampingFactor = 0.001;
 
   useFrame(() => {
     const newCameraPosition = new THREE.Vector3();
-    newCameraPosition.copy(camera.position); // Copy the current camera position
+    newCameraPosition.copy(camera.position);
 
-    // Adjust the new camera position based on the scrollY value
-    newCameraPosition.y = -scrollY * dampingFactor; // Set the Y position based on scrollY
+    newCameraPosition.y = -scrollY * dampingFactor;
 
-    // Apply the new camera position
     camera.position.copy(newCameraPosition);
-    // const targetY = window.scrollY * dampingFactor + initialY;
-    // camera.position.y = targetY;
 
-    // Ensure the camera's orientation stays fixed
-    camera.rotation.x = 0; // Reset to a horizontal view
-    camera.rotation.z = 0; // Reset to a level view (adjust as needed)
+    camera.rotation.x = 0;
+    camera.rotation.z = 0;
   });
 
   return null;
