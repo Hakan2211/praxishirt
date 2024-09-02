@@ -65,7 +65,7 @@ export default function MobileModels() {
             <Common />
           </Suspense>
 
-          <HeadlineText3D position={[-0.6, 0.5, 0]} />
+          <HeadlineText3D position={[-0.6, 1.5, 0]} />
         </View>
       </div>
     </>

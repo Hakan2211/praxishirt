@@ -21,7 +21,7 @@ export default function Home() {
         <div
           className={`flex  w-full h-1/2 flex-col items-center text-center  ${
             isMobile
-              ? 'translate-x-0 translate-y-[20rem]'
+              ? 'translate-x-0 translate-y-[10rem]'
               : 'translate-x-60 translate-y-72'
           }`}
         >
