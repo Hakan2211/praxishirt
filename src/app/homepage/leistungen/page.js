@@ -9,22 +9,22 @@ import dynamic from 'next/dynamic';
 import { PositionalAudio } from '@react-three/drei';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
 import { Dance } from '@/components/leistungen/Dance';
-import { Chess } from '@/components/leistungen/Chess';
+
 import Scroll from '@/components/scroll/Scroll';
 import { useMobile } from '@/components/context/IsMobileProvider';
-// import { Neuron } from '@/components/leistungen/Neuron';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
   { ssr: false }
 );
 
-// const EyeBrain = dynamic(
-//   () => import('@/components/leistungen/eyeBrain').then((mod) => mod.EyeBrain),
-//   { ssr: false }
-// );
 const Neuron = dynamic(
   () => import('@/components/leistungen/Neuron').then((mod) => mod.Neuron),
+  { ssr: false }
+);
+
+const Earth = dynamic(
+  () => import('@/components/leistungen/Earth').then((mod) => mod.Earth),
   { ssr: false }
 );
 
@@ -48,29 +48,24 @@ function Leistungen() {
               <span className="pr-2 text-red-300">Verhaltenstherapie</span>
             </h1>
             <div className="text-xl leading-9 text-zinc-200 ">
-              <p>Unsere Verhaltenstherapie bietet einen individuellen Weg</p>
-              <p>
-                zur Verbesserung Ihrer psychischen Gesundheit. Durch gezielte
-              </p>
+              <p>Die Verhaltenstherapie bietet einen individuellen Weg</p>
+              <p>zur Verbesserung der psychischen Gesundheit. Durch gezielte</p>
               <p>
                 Analyse und Anpassung von Denk- und Verhaltensmustern
-                unterstützen
+                unterstütze
               </p>
-              <p>wir Sie dabei, positive Veränderungen herbeizuführen.</p>
-              <p>Gemeinsam schaffen wir eine sichere Umgebung, um belastende</p>
+              <p>ich Sie dabei, eine individuelle Veränderung zu bewegen.</p>
               <p>
-                Situationen zu bewältigen und Ihre Lebensqualität zu steigern.
+                Auf dieser Website finden Sie {''}
+                <a
+                  className="text-red-300 hover:text-red-500"
+                  target="_blank"
+                  href="https://www.psychotipps.com/"
+                >
+                  Psychotipps
+                </a>
+                .
               </p>
-              <p>
-                Die Verhaltenstherapie in unserer Praxis ist darauf
-                ausgerichtet,
-              </p>
-              <p>
-                {' '}
-                Sie in Ihrer persönlichen Entwicklung zu begleiten und
-                nachhaltige
-              </p>
-              <p>positive Veränderungen zu fördern.</p>
             </div>
           </div>
 
@@ -80,7 +75,7 @@ function Leistungen() {
                 distance={2}
                 autoplay
                 loop
-                url="../../../audio_background/Flight of the Inner Bird (Slowed Reverb).mp3"
+                url="../../../audio_background/audiocoffee.wav"
               />
             )}
             <Common />
@@ -114,9 +109,9 @@ function Leistungen() {
             )}
 
             {isMobile ? (
-              <Chess scale={0.004} position={[0, -2.7, 4]} />
+              <Earth scale={0.02} position={[0, -2.4, 4]} />
             ) : (
-              <Chess scale={0.007} position={[0.6, -2.7, 4]} />
+              <Earth scale={0.03} position={[0.6, -2.3, 4]} />
             )}
 
             <Suspense fallback={null}>
@@ -140,29 +135,39 @@ function Leistungen() {
               </span>
             </h1>
             <div className="text-xl leading-9 text-zinc-200 ">
-              <p>Unsere neuropsychologische Diagnostik und Therapie bieten</p>
+              <p>Die neuropsychologische Diagnostik und Therapie bietet</p>
               <p>
                 {' '}
                 einen präzisen Einblick in die Funktionsweise Ihres Gehirns.
               </p>
-              <p>Durch umfassende Tests und Analysen identifizieren wir</p>
+              <p>Sie ist eine umfangreiche Untersuchung von kognitiven und</p>
               <p>
-                kognitive Herausforderungen und entwickeln personalisierte
-                Therapieansätze.
+                emotional affektiven Funktionen und deren Auswirkungen auf das
+                Verhalten.
               </p>
               <p>
-                Unser Ziel ist es, durch gezielte Interventionen die
-                neurologische Funktion{' '}
+                Folgende Funktionsbereiche werden beispielsweise untersucht:
               </p>
+              <p className="mt-8">&#8226; Aufmerksamkeitsstörungen </p>
+              <p>&#8226; Gedächtnisstörungen </p>
+              <p>&#8226; Exekutive Störungen </p>
+              <p>&#8226; Affektive und emotionale Störungen </p>
+              <p>&#8226; Verhaltensstörungen </p>
+              <p className="mb-8">
+                &#8226; Krankheitseinsicht und Krankheitsverarbeitung{' '}
+              </p>
+              <p>Sie werden in meiner Praxis ausführlich informiert.</p>
               <p>
-                zu optimieren und Ihnen dabei zu helfen, Ihre kognitiven
-                Fähigkeiten zu stärken.
+                Auf der Website{' '}
+                <a
+                  className="text-red-300 hover:text-red-500"
+                  target="_blank"
+                  href="https://www.gnp.de/"
+                >
+                  Gesellschaft für Neuropsychologie e.V.
+                </a>{' '}
               </p>
-              <p>
-                In unserer Praxis steht die neuropsychologische Diagnostik und
-                Therapie{' '}
-              </p>
-              <p>im Dienste Ihrer mentalen Gesundheit und Wohlbefindens.</p>
+              <p>finden Sie ausführliche Informationen.</p>
             </div>
           </div>
         </section>
@@ -180,30 +185,19 @@ function Leistungen() {
               </span>
             </h1>
             <div className="text-xl leading-9 text-zinc-200 ">
-              <p>
-                Unsere interkulturelle Psychotherapie respektiert die Vielfalt
-              </p>
+              <p>Die interkulturelle Psychotherapie respektiert die Vielfalt</p>
               <p>
                 individueller Hintergründe und schafft einen Raum für
                 kultursensible Unterstützung.
               </p>
               <p>
-                Wir erkennen an, dass kulturelle Einflüsse die psychische
-                Gesundheit beeinflussen können,
+                Ich erkenne an, dass kulturelle Einflüsse die psychische
+                Gesundheit beeinflussen,
               </p>
               <p>
-                und bieten eine maßgeschneiderte Therapie, die Ihre persönlichen
+                und biete eine individuelle Therapie an, die Ihre persönlichen
               </p>
               <p>kulturellen Bedürfnisse berücksichtigt.</p>
-              <p>
-                Gemeinsam navigieren wir durch kulturelle Unterschiede, um Ihre
-                seelische Gesundheit
-              </p>
-              <p>
-                {' '}
-                zu fördern und Ihnen dabei zu helfen, Ihre Lebensqualität zu
-                verbessern.
-              </p>
             </div>
           </div>
         </section>

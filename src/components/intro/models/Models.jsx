@@ -5,6 +5,7 @@ import Loader from '@/components/intro/loading/Loading';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import HeadlineText3D from '@/components/intro/3dtext/Text';
+import { useMobile } from '@/components/context/IsMobileProvider';
 
 const View = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.View),
@@ -56,6 +57,7 @@ const Sakura = dynamic(
 );
 
 export default function Models() {
+  const { isMobile } = useMobile();
   return (
     <>
       <Loader />
@@ -85,7 +87,8 @@ export default function Models() {
             <Sakura position={[-4.3, -3.7, -4.3]} scale={0.38} />
             <Common />
           </Suspense>
-          <HeadlineText3D position={[0.2, 0.2, 0]} />
+
+          <HeadlineText3D position={[0.2, 1.0, 0]} />
         </View>
       </div>
     </>

@@ -42,18 +42,13 @@ function Homepage() {
                 : 'top-80 left-72 mt-5 p-16 w-2/3 h-2/4'
             } `}
           >
-            <h1 className="pb-3 mb-5">
-              <span className="text-4xl pr-2 text-red-300">Praxis Hirt</span>
-              {''}
-              <span className="text-3xl p-1">heißt Sie willkommen.</span>
-            </h1>
             <div className="text-xl leading-9 text-zinc-200 ">
-              <p>In den Tiefen Ihres Gehirns verbirgt</p>
-              <p>sich der Schlüssel zu Ihrer inneren Stärke.</p>
-              <p>Unsere Psychotherapie öffnet die Tore zur Transformation</p>
+              <p>In den Tiefen unseres Gehirns verbirgt</p>
+              <p>sich der Schlüssel zur unserer inneren Stärke.</p>
+              <p>Die Psychotherapie öffnet die Tore zur Veränderung</p>
               <p>und zum Wachstum, indem wir die einzigartige Landkarte</p>
-              <p>Ihrer Gedanken gemeinsam erforschen.</p>
-              <h2>Hier beginnt Ihre Reise zur psychischen Gesundheit.</h2>
+              <p>der Gedanken gemeinsam erforschen.</p>
+              <h2>Hier beginnt die Reise zur ganzheitlichen Gesundheit.</h2>
             </div>
           </div>
 
@@ -63,7 +58,7 @@ function Homepage() {
                 distance={2}
                 autoplay
                 loop
-                url="../../../audio_background/Flight of the Inner Bird (Slowed Reverb).mp3"
+                url="../../../audio_background/audiocoffee.wav"
               />
             )}
             <Common />
@@ -136,20 +131,15 @@ function Homepage() {
                 : 'top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4'
             } `}
           >
-            <h1 className="pb-3 mb-5">
-              <span className="text-4xl pr-2 text-red-300">Herz</span>
-              {''}
-              <span className="text-3xl p-1">im Einklang.</span>
-            </h1>
             <div className="text-xl leading-9 text-zinc-200 ">
+              <p>In meiner Praxis schlagen Herz, Kopf und Bauch im Einklang.</p>
+              <p>Das Ziel ist es, Sie emotional zu unterstützen,</p>
+              <p>um Ihr inneres Gleichgewicht zu finden.</p>
+              <p>Ich möchte mit Ihnen gemeinsam Ihre Ressourcen stärken,</p>
+              <p>an Ihren Zielen arbeiten und Sie bei der Gestaltung</p>
               <p>
-                In unserer Praxis schlagen Herz und Psychotherapie im Einklang.
+                eines selbstbestimmten und zufriedenen Lebens zu unterstützen.
               </p>
-              <p>Unser Ziel ist es, Ihnen zu helfen, Ihr emotionales</p>
-              <p>Gleichgewicht wiederzufinden.</p>
-              <p>Unsere Psychotherapie unterstützt Sie dabei, Ihr Herz</p>
-              <p>in Harmonie mit Ihrer Psyche schlagen zu lassen, um ein</p>
-              <p>erfülltes Leben zu führen.</p>
             </div>
           </div>
         </section>
@@ -161,22 +151,15 @@ function Homepage() {
                 : 'top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4'
             }  `}
           >
-            <h1 className="pb-3 mb-5">
-              <span className="text-4xl pr-2 text-red-300">Im Kern,</span>
-              {''}
-              <span className="text-3xl p-1">wie Sie sind.</span>
-            </h1>
             <div className="text-xl leading-9 text-zinc-200 ">
-              <p>Unsere Praxis findet die Verbindung zwischen</p>
-              <p>Psychotherapie und der tiefgreifenden DNA Ihrer</p>
-              <p>
-                Persönlichkeit. Ähnlich wie jeder DNA-Strang einzigartig ist,
-              </p>
-              <p>
-                ist auch Ihre Psyche einzigartig. Unsere Therapie respektiert
-              </p>
-              <p>Ihre genetische Vielfalt und hilft Ihnen, die Potenziale</p>
-              <p>Ihrer mentalen Struktur zu entfalten</p>
+              <p>Ähnlich wie jeder DNA-Strang bei jedem Menschen</p>
+              <p>einzigartig ist, ist auch bei jedem Menschen die eigene</p>
+              <p>Emotion, Denk- und Verhaltensmuster einzigartig.</p>
+              <p>Jeder Mensch hat die Kapazität zu lernen und</p>
+              <p>sich zu verändern, zu wachsen und zu einem</p>
+              <p>selbstbestimmten Wesen zu werden.</p>
+              <p>Es geht um die Veränderung in der gesamten Art</p>
+              <p>der Organisation und der Art der Reaktion.</p>
             </div>
           </div>
         </section>

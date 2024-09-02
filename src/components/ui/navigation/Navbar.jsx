@@ -38,7 +38,7 @@ export default function Navbar() {
                 } hover:text-red-300`}
                 href={'/homepage/team'}
               >
-                Team
+                Über mich
               </Link>
             </li>
             <li>

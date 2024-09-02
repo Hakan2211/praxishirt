@@ -35,7 +35,7 @@ function ProfilePage() {
             distance={2}
             autoplay
             loop
-            url="../../../audio_background/Flight of the Inner Bird (Slowed Reverb).mp3"
+            url="../../../audio_background/audiocoffee.wav"
           />
         )}
         <Suspense fallback={null}>
@@ -44,7 +44,43 @@ function ProfilePage() {
         </Suspense>
         <Common />
       </View>
-      <div className="z-10 absolute flex flex-col md:flex-row gap-6  md:h-auto p-8 md:p-20">
+
+      <div className="z-10 absolute grid min-w-full max-w-4xl grid-cols-3 gap-4 ">
+        <div class="col-span-1"></div>
+        <div className="col-span-1 max-w-[1000px]">
+          <div className="w-full">
+            <Image
+              alt={profile.name}
+              className="w-full rounded-lg object-cover"
+              height={300}
+              src={profile.url}
+              style={{
+                aspectRatio: '300/300',
+                objectFit: 'cover',
+              }}
+              width={300}
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 mt-8">
+            <h2 className="text-4xl font-bold text-white">{profile.name}</h2>
+            <div className="text-2xl font-bold text-white">
+              <h2>Diplom Psychologin</h2>
+              <h2 className="whitespace-nowrap">
+                Psychologische Psychotherapeutin (VT)
+              </h2>
+              <h2>Klininsche Neuropsychologin</h2>
+            </div>
+            <p className="mt-2 text-2xl text-stone-50 dark:text-gray-400">
+              Beschreibung
+            </p>
+          </div>
+        </div>
+
+        <div class="col-span-1"></div>
+      </div>
+
+      {/* <div className="z-10 absolute flex flex-col md:flex-row gap-6  md:h-auto p-8 md:p-20">
         <Link
           href={'/homepage/team'}
           className="hover:text-red-300 duration-300 ease-in-out transition-colors self-start"
@@ -68,9 +104,17 @@ function ProfilePage() {
             <p className="mt-2 text-2xl text-stone-50 dark:text-gray-400">
               {profile.role}
             </p>
+            <p className="mt-2 text-2xl text-stone-50 dark:text-gray-400">
+              {profile.profession}
+            </p>
+            <p className="mt-2 text-2xl text-stone-50 dark:text-gray-400">
+              {profile.profession2}
+            </p>
+
             <p className="mt-2 text-xl text-stone-50 dark:text-gray-400">
               Bei Praxis Hirt seit {profile.year}
             </p>
+
             <p className="mt-2 text-gray-200 dark:text-gray-400">
               {profile.description}
             </p>
@@ -110,7 +154,7 @@ function ProfilePage() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

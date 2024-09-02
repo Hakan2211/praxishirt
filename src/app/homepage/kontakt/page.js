@@ -6,7 +6,7 @@ import { View } from '@/components/canvas/View';
 import Background from '@/components/background/Background';
 import Lightsource from '@/components/background/Lightsource';
 import dynamic from 'next/dynamic';
-import { Bird } from '@/components/kontakt/Bird';
+
 import { PositionalAudio } from '@react-three/drei';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
 import { useMobile } from '@/components/context/IsMobileProvider';
@@ -30,7 +30,74 @@ function Kontakt() {
 
   return (
     <>
-      {' '}
+      <div
+        className={`absolute  z-10 text-white w-full  flex py-12 ${
+          isMobile ? 'h-[150vh]' : 'h-screen'
+        } `}
+      >
+        <div
+          className={`space-y-8 max-w-xl  flex flex-col items-start  mx-auto p-8  rounded-lg ${
+            isMobile ? 'w-4/5' : 'w-full'
+          } `}
+        >
+          <h2
+            className={`font-bold text-center underline underline-offset-4 ${
+              isMobile ? 'text-xl' : 'text-4xl'
+            } `}
+          >
+            Telefonische Erreichbarkeit:
+          </h2>
+          <div
+            className={` text-center w-[100%] flex  ${
+              isMobile ? 'text-xl' : 'text-4xl'
+            } `}
+          >
+            <p>Tel. :</p>
+            <p className="ml-auto">07251 / 7242112 </p>
+          </div>
+
+          <div
+            className={` text-center flex w-[100%] ${
+              isMobile ? 'text-xl' : 'text-4xl'
+            } `}
+          >
+            <p>Mo - Fr</p>
+            <p className="ml-auto">12:00 - 12:30</p>
+          </div>
+          <div
+            className={` text-center flex w-[100%] ${
+              isMobile ? 'text-xl' : 'text-4xl'
+            } `}
+          >
+            <p>Fr</p> <p className="ml-auto">15:30 - 18:00</p>{' '}
+          </div>
+
+          <h2
+            className={`font-bold text-center underline underline-offset-4 ${
+              isMobile ? 'text-xl' : 'text-4xl'
+            } `}
+          >
+            Adresse:
+          </h2>
+          <p className={`  ${isMobile ? 'text-xl' : 'text-4xl'} `}>
+            Filiz Hirt
+          </p>
+          <p className={` ${isMobile ? 'text-xl' : 'text-4xl'} `}>
+            Styrumstraße 20, 76646 Bruchsal
+          </p>
+          <p className={` ${isMobile ? 'text-xl' : 'text-4xl'} `}>
+            Google Maps Link:{' '}
+            <a
+              className="text-red-300 hover:text-red-500"
+              target="_blank"
+              href="https://www.google.de/maps/place/Styrumstra%C3%9Fe+20,+76646+Bruchsal/@49.1278924,8.5952895,16z/data=!3m1!4b1!4m6!3m5!1s0x4797a3dfd93576c9:0xb49692b4fb0cbfd8!8m2!3d49.1278925!4d8.6001604!16s%2Fg%2F11bw3gl1ph?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D"
+            >
+              Styrumstraße 20, 76646 Bruchsal
+            </a>{' '}
+          </p>
+        </div>
+      </div>
+      {/* {' '}
       <div
         className={`absolute  z-10 text-white w-full  flex items-center justify-center py-12 ${
           isMobile ? 'h-[150vh]' : 'h-screen'
@@ -140,7 +207,7 @@ function Kontakt() {
         <a href="https://www.praxishirt.de" target="__blank">
           <span>Impressum</span>
         </a>
-      </div>
+      </div> */}
       <View
         className={`!fixed  top-0 left-0 flex  w-full ${
           isMobile ? 'h-[200vh]' : 'h-screen'
@@ -151,7 +218,7 @@ function Kontakt() {
             distance={2}
             autoplay
             loop
-            url="../../../audio_background/Flight of the Inner Bird (Slowed Reverb).mp3"
+            url="../../../audio_background/audiocoffee.wav"
           />
         )}
         <Common />
@@ -159,7 +226,7 @@ function Kontakt() {
           <Background />
           <Lightsource />
         </Suspense>
-        {isMobile ? (
+        {/* {isMobile ? (
           <>
             <Bird
               position={[0.05, 0.5, 3]}
@@ -174,7 +241,7 @@ function Kontakt() {
             scale={0.15}
             rotation={[0, -Math.PI / 2 + 200, 0]}
           />
-        )}
+        )} */}
       </View>
     </>
   );
