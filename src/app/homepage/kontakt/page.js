@@ -37,7 +37,7 @@ function Kontakt() {
       >
         <div
           className={`absolute  z-10 text-white w-full  flex py-12 ${
-            isMobile ? 'h-[150vh]' : 'h-screen'
+            isMobile ? 'h-[100dvh]' : 'h-screen'
           } `}
         >
           <div
