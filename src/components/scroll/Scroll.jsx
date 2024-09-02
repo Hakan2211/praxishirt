@@ -16,21 +16,21 @@ function Scroll() {
       setScrollY(window.scrollY || 0);
     }
 
-    function handlePointerDown() {
-      setScrollY(window.scrollY || 0);
-    }
+    // function handlePointerDown() {
+    //   setScrollY(window.scrollY || 0);
+    // }
 
     window.addEventListener('scroll', onScroll);
-    if (isMobile) {
-      window.addEventListener('scroll', handlePointerDown);
-    }
+    // if (isMobile) {
+    //   window.addEventListener('touchmove', handlePointerDown);
+    // }
     return () => {
       window.removeEventListener('scroll', onScroll);
-      if (isMobile) {
-        window.removeEventListener('scroll', handlePointerDown);
-      }
+      // if (isMobile) {
+      //   window.removeEventListener('scroll', handlePointerDown);
+      // }
     };
-  }, [setScrollY, isMobile]);
+  }, [setScrollY]);
 
   const { camera } = useThree();
   const initialY = camera.position.y;
