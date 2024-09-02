@@ -17,17 +17,17 @@ function Scroll() {
     }
 
     function handlePointerDown() {
-      setScrollY(window.scrollY);
+      setScrollY(window.scrollY || 0);
     }
 
     window.addEventListener('scroll', onScroll);
     if (isMobile) {
-      window.addEventListener('touchmove', handlePointerDown);
+      window.addEventListener('scroll', handlePointerDown);
     }
     return () => {
       window.removeEventListener('scroll', onScroll);
       if (isMobile) {
-        window.removeEventListener('touchmove', handlePointerDown);
+        window.removeEventListener('scroll', handlePointerDown);
       }
     };
   }, [setScrollY, isMobile]);
