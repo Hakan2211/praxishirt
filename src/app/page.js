@@ -21,8 +21,8 @@ export default function Home() {
         <div
           className={`flex  w-full h-1/2 flex-col items-center justify-center  text-center translate-y-full ${
             isMobile
-              ? 'translate-x-0 translate-y-[24rem]'
-              : 'translate-x-60 translate-y-72'
+              ? 'translate-x-0 translate-y-[20rem]'
+              : 'translate-x-60 translate-y-60'
           }`}
         >
           {/* <span className="w-full text-4xl -translate-y-20">
