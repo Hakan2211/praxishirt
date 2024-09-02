@@ -13,7 +13,7 @@ function Scroll() {
 
   useEffect(() => {
     function onScroll() {
-      setScrollY(window.scrollY);
+      setScrollY(window.scrollY || 0);
     }
 
     function handlePointerDown() {
@@ -22,12 +22,12 @@ function Scroll() {
 
     window.addEventListener('scroll', onScroll);
     if (isMobile) {
-      window.addEventListener('pointerdown', handlePointerDown);
+      window.addEventListener('touchmove', handlePointerDown);
     }
     return () => {
       window.removeEventListener('scroll', onScroll);
       if (isMobile) {
-        window.removeEventListener('pointerdown', handlePointerDown);
+        window.removeEventListener('touchmove', handlePointerDown);
       }
     };
   }, [setScrollY, isMobile]);
@@ -46,6 +46,7 @@ function Scroll() {
 
     camera.rotation.x = 0;
     camera.rotation.z = 0;
+    camera.updateProjectionMatrix();
   });
 
   return null;
