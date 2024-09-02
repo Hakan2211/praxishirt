@@ -31,7 +31,7 @@ function Kontakt() {
   return (
     <>
       <main
-        className={`w-full h-[150vh]  ${
+        className={`w-full h-[100vh]  ${
           isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
         } `}
       >
