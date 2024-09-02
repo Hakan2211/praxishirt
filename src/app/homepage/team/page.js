@@ -95,7 +95,7 @@ function ProfilePage() {
       <div className="z-10 absolute grid min-w-full max-w-4xl grid-cols-[auto 1fr auto] px-4 gap-4 ">
         <div class="col-span-1"></div>
         <div className="col-start-2 max-w-[1000px]">
-          <div className="w-full">
+          <div className="w-5/6">
             <Image
               alt={'Filiz Hirt'}
               className="w-full rounded-lg object-cover"
