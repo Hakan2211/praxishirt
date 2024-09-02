@@ -35,7 +35,11 @@ function Leistungen() {
 
   return (
     <>
-      <main className={`w-full h-[300vh] ${isMobile ? 'h-[300vh]' : ''} `}>
+      <main
+        className={`w-full h-[300vh]  ${
+          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
+        } `}
+      >
         <section className="w-full h-screen">
           <div
             className={`z-10 text-white absolute top-80  ${
