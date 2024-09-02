@@ -19,10 +19,10 @@ export default function Home() {
         {/* jumbo */}
 
         <div
-          className={`flex  w-full h-1/2 flex-col items-center justify-center  text-center translate-y-full ${
+          className={`flex  w-full h-1/2 flex-col items-center   text-center translate-y-full ${
             isMobile
               ? 'translate-x-0 translate-y-[20rem]'
-              : 'translate-x-60 translate-y-60'
+              : 'translate-x-60 translate-y-72'
           }`}
         >
           {/* <span className="w-full text-4xl -translate-y-20">
