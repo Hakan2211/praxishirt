@@ -31,7 +31,7 @@ function Homepage() {
     <>
       <main
         className={`w-full h-[300vh]  ${
-          isMobile ? 'overscroll-y-auto' : 'overscroll-y-none'
+          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
         } `}
       >
         <section className="w-full h-screen">
