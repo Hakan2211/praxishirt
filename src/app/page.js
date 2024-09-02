@@ -15,7 +15,11 @@ export default function Home() {
 
   return (
     <>
-      <main className="bg-gradient-to-t from-slate-100 via-blue-100 to-sky-200 h-screen w-full overflow-hidden">
+      <main
+        className={`bg-gradient-to-t from-slate-100 via-blue-100 to-sky-200 h-screen w-full  ${
+          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
+        } `}
+      >
         {/* jumbo */}
 
         <div
