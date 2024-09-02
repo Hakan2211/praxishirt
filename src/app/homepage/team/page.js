@@ -92,9 +92,9 @@ function ProfilePage() {
         <Common />
       </View>
 
-      <div className="z-10 absolute grid min-w-full max-w-4xl grid-cols-3 gap-4 ">
+      <div className="z-10 absolute grid min-w-full max-w-4xl grid-cols-[auto 1fr auto] px-4 gap-4 ">
         <div class="col-span-1"></div>
-        <div className="col-span-1 max-w-[1000px]">
+        <div className="col-start-2 max-w-[1000px]">
           <div className="w-full">
             <Image
               alt={'Filiz Hirt'}
