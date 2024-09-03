@@ -1,61 +1,7 @@
-// 'use client';
-
-// import React, { useEffect, Suspense } from 'react';
-
-// import { View } from '@/components/canvas/View';
-// import Background from '@/components/background/Background';
-// import Lightsource from '@/components/background/Lightsource';
-// import dynamic from 'next/dynamic';
-// import { Image, PositionalAudio } from '@react-three/drei';
-// import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
-// import TeamPage from '@/components/team/TeamPage';
-// import { myImages } from '@/components/team/Images';
-// import { useMobile } from '@/components/context/IsMobileProvider';
-
-// const Common = dynamic(
-//   () => import('@/components/canvas/View').then((mod) => mod.Common),
-//   { ssr: false }
-// );
-
-// function Team() {
-//   const { soundEnabled } = useSoundEnabled();
-//   const { isMobile } = useMobile();
-//   return (
-//     <>
-//       <div
-//         className={`text-white z-10 absolute h-20 text-3xl left-[45%] translate-y-20 ${
-//           isMobile ? ' -translate-x-12' : ''
-//         } `}
-//       >
-//         Unser Team
-//       </div>
-//       <View className=" !fixed  top-0 left-0 flex h-screen w-full ">
-//         {soundEnabled && (
-//           <PositionalAudio
-//             distance={2}
-//             autoplay
-//             loop
-//             url="../../../audio_background/audiocoffee.wav"
-//           />
-//         )}
-//         <Common />
-//         <Suspense fallback={null}>
-//           <Background />
-//           <Lightsource />
-//         </Suspense>
-
-//         <TeamPage images={myImages} />
-//       </View>
-//     </>
-//   );
-// }
-
-// export default Team;
 'use client';
 
-import { myImages } from '@/components/team/Images';
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
+
 import React, { Suspense } from 'react';
 import { View } from '@/components/canvas/View';
 import Background from '@/components/background/Background';
@@ -63,8 +9,7 @@ import Lightsource from '@/components/background/Lightsource';
 import dynamic from 'next/dynamic';
 import { PositionalAudio } from '@react-three/drei';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
-import Link from 'next/link';
-import LeftArrow from '@/components/icons/left-arrow';
+
 import { useMobile } from '@/components/context/IsMobileProvider';
 
 const Common = dynamic(
@@ -100,7 +45,7 @@ function ProfilePage() {
         </View>
 
         <div className="z-10 absolute grid min-w-full max-w-4xl grid-cols-[auto 1fr auto] px-4 gap-4 ">
-          <div class="col-span-1"></div>
+          <div className="col-span-1"></div>
           <div className="col-start-2 max-w-[1000px]">
             <div className="w-5/6">
               <Image
@@ -123,7 +68,7 @@ function ProfilePage() {
                 <h2 className="">Psychologische Psychotherapeutin (VT)</h2>
                 <h2>Klininsche Neuropsychologin</h2>
               </div>
-              <p className="mt-14 mb-14 text-2xl text-stone-50 dark:text-gray-400">
+              <div className="mt-14 mb-14 text-2xl text-stone-50 dark:text-gray-400">
                 <p className="text-4xl font-bold text-red-300">
                   Herzlich Willkommen
                 </p>
@@ -218,11 +163,11 @@ function ProfilePage() {
                 </p>
                 <p>&#8226; Private Krankenkassen (GOP - 2.8'fache)</p>
                 <p>&#8226; Selbstzahler</p>
-              </p>
+              </div>
             </div>
           </div>
 
-          <div class="col-span-1"></div>
+          <div className="col-span-1"></div>
         </div>
       </main>
     </>
