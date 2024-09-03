@@ -28,6 +28,11 @@ const Earth = dynamic(
   { ssr: false }
 );
 
+export const metadata = {
+  title: 'Filiz Hirt',
+  description: 'Filiz Hirt - Leistungen',
+};
+
 function Leistungen() {
   const { soundEnabled } = useSoundEnabled();
 

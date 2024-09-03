@@ -9,7 +9,17 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Praxishirt - Psychotherapie in Bruchsal',
-  description: 'die Psychotherapie in Bruchsal, geleitet bei Filiz Hirt',
+  description: 'Die Psychotherapie in Bruchsal, geleitet bei Filiz Hirt',
+  metadataBase: new URL('https://praxishirt.de'),
+  keywords: [
+    'Filiz Hirt',
+    'Psychotherapie',
+    'Bruchsal',
+    'PrasxisHirt',
+    'Praxis Hirt',
+    'Filiz',
+    'Hirt',
+  ],
 };
 
 export default function RootLayout({ children }) {

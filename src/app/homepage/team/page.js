@@ -17,6 +17,11 @@ const Common = dynamic(
   { ssr: false }
 );
 
+export const metadata = {
+  title: 'Filiz Hirt',
+  description: 'Filiz Hirt - Über mich',
+};
+
 function ProfilePage() {
   const { soundEnabled } = useSoundEnabled();
   const { isMobile } = useMobile();

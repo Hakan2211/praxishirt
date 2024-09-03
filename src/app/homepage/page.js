@@ -23,6 +23,11 @@ const Common = dynamic(
   { ssr: false }
 );
 
+export const metadata = {
+  title: 'Filiz Hirt',
+  description: 'Filiz Hirt - Homepage',
+};
+
 function Homepage() {
   const { soundEnabled } = useSoundEnabled();
   const { isMobile } = useMobile();
