@@ -66,7 +66,7 @@ function ProfilePage() {
               <div className="text-2xl  text-white">
                 <h2>Diplom Psychologin</h2>
                 <h2 className="">Psychologische Psychotherapeutin (VT)</h2>
-                <h2>Klininsche Neuropsychologin</h2>
+                <h2>Klinische Neuropsychologin</h2>
               </div>
               <div className="mt-14 mb-14 text-2xl text-stone-50 dark:text-gray-400">
                 <p className="text-4xl font-bold text-red-300">
