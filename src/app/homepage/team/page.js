@@ -124,7 +124,7 @@ function ProfilePage() {
                   Verhaltenstherapie setzt an den prädispornierenden,
                   auslösenden und aufrechterhaltenden Problembedingungen an. Sie
                   ist zielorientiert, handlungsorientiert und bemüht sich um
-                  andauernde Weiterenmtwicklung.
+                  andauernde Weiterentwicklung.
                 </p>
                 <h2 className="mt-8 font-bold">Ihr Weg in die Therapie:</h2>
                 <p className="mt-8">

@@ -101,7 +101,7 @@ function Kontakt() {
               </a>{' '}
             </p>
             <p className={` ${isMobile ? 'text-xl' : 'text-4xl'} `}>
-              Unsere alte{' '}
+              Meine alte{' '}
               <a
                 className="text-red-300 hover:text-red-500"
                 target="_blank"
