@@ -100,6 +100,16 @@ function Kontakt() {
                 Styrumstraße 20, 76646 Bruchsal
               </a>{' '}
             </p>
+            <p className={` ${isMobile ? 'text-xl' : 'text-4xl'} `}>
+              Unsere alte{' '}
+              <a
+                className="text-red-300 hover:text-red-500"
+                target="_blank"
+                href="https://praxishirt.netlify.app/"
+              >
+                'in Arbeit Webseite'
+              </a>{' '}
+            </p>
           </div>
         </div>
         {/* {' '}
