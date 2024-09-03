@@ -117,7 +117,7 @@ function ProfilePage() {
                 </p>
                 <p className="mt-8">
                   Um zu erkennen, was genau problematisch ist, ist es wichtig,
-                  dass problematische Verhalten bewusst wahrzunehmen, um es
+                  das problematische Verhalten bewusst wahrzunehmen, um es
                   verändern zu können.
                 </p>
                 <p className="mt-8">
