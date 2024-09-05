@@ -23,9 +23,11 @@ function ProfilePage() {
 
   return (
     <>
-      <main
-        className={`w-full h-[300vh]  ${
-          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
+      <div
+        className={`w-full ${
+          isMobile
+            ? 'overflow-y-auto h-[460dvh]'
+            : ' h-[300dvh] overflow-y-hidden'
         } `}
       >
         <View className=" !fixed  top-0 left-0 flex h-screen w-full ">
@@ -44,7 +46,7 @@ function ProfilePage() {
           <Common />
         </View>
 
-        <div className="z-10 absolute grid min-w-full max-w-4xl grid-cols-[auto 1fr auto] px-4 gap-4 ">
+        <div className="z-10 absolute grid min-w-full  max-w-4xl grid-cols-[auto 1fr auto] px-4 gap-4 ">
           <div className="col-span-1"></div>
           <div className="col-start-2 max-w-[1000px]">
             <div className="w-5/6">
@@ -169,7 +171,7 @@ function ProfilePage() {
 
           <div className="col-span-1"></div>
         </div>
-      </main>
+      </div>
     </>
   );
 }

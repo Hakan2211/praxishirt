@@ -1,3 +1,4 @@
+import Footer from '@/components/footer/footer';
 import Navbar from '@/components/ui/navigation/Navbar';
 import React from 'react';
 
@@ -8,9 +9,10 @@ export const meta = {
 
 export default function HomepageLayout({ children }) {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      {children}
+      <main className="flex-grow">{children}</main>
+      <Footer />
     </div>
   );
 }

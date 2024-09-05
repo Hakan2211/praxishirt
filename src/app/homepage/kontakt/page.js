@@ -30,8 +30,8 @@ function Kontakt() {
 
   return (
     <>
-      <main
-        className={`w-full h-[100vh]  ${
+      <div
+        className={`w-full h-screen  ${
           isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
         } `}
       >
@@ -258,7 +258,7 @@ function Kontakt() {
           />
         )} */}
         </View>
-      </main>
+      </div>
     </>
   );
 }

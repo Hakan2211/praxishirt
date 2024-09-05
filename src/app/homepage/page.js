@@ -29,9 +29,9 @@ function Homepage() {
 
   return (
     <>
-      <main
-        className={`w-full h-[300vh]  ${
-          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
+      <div
+        className={`w-full  ${
+          isMobile ? 'overflow-y-auto h-[320dvh]' : 'overflow-y-hidden'
         } `}
       >
         <section className="w-full h-screen">
@@ -163,7 +163,7 @@ function Homepage() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }
