@@ -31,7 +31,7 @@ function Homepage() {
     <>
       <div
         className={`w-full  ${
-          isMobile ? 'overflow-y-auto h-[320dvh]' : 'overflow-y-hidden'
+          isMobile ? 'overflow-y-auto h-[350dvh]' : 'overflow-y-hidden'
         } `}
       >
         <section className="w-full h-screen">
