@@ -26,8 +26,8 @@ function ProfilePage() {
       <div
         className={`w-full ${
           isMobile
-            ? 'overflow-y-auto h-[460dvh]'
-            : ' h-[300dvh] overflow-y-hidden'
+            ? 'overflow-y-auto h-[580dvh]'
+            : 'overflow-y-hidden h-[340dvh] '
         } `}
       >
         <View className=" !fixed  top-0 left-0 flex h-screen w-full ">

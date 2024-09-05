@@ -22,7 +22,7 @@ function Impressum() {
   return (
     <div
       className={`w-full  ${
-        isMobile ? 'overflow-y-auto h-[350dvh]' : 'overflow-y-hidden h-[210dvh]'
+        isMobile ? 'overflow-y-auto h-[380dvh]' : 'overflow-y-hidden h-[240dvh]'
       } `}
     >
       <View className=" !fixed  top-0 left-0 flex h-screen w-full ">

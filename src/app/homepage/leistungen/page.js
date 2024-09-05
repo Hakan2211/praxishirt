@@ -37,7 +37,7 @@ function Leistungen() {
     <>
       <div
         className={`w-full  ${
-          isMobile ? 'overflow-y-auto h-[350dvh] ' : 'overflow-y-hidden'
+          isMobile ? 'overflow-y-auto h-[400dvh] ' : 'overflow-y-hidden'
         } `}
       >
         <section className="w-full h-screen">
