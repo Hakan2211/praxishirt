@@ -34,8 +34,9 @@ export default function Home() {
           </span> */}
 
           <p className="mb-8 max-w-[36rem]  text-4xl leading-normal translate-y-8">
-            Es kommt nicht darauf an, was andere aus uns gemacht haben, sondern
-            was wir aus dem machen, was andere aus uns gemacht haben.
+            &quot;Es kommt nicht darauf an, was andere aus uns gemacht haben,
+            sondern was wir aus dem machen, was andere aus uns gemacht
+            haben.&quot; - Jean-Paul Sartre
           </p>
           <button
             onClick={() => setSoundEnabled(true)}

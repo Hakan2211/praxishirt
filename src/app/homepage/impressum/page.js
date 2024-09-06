@@ -102,7 +102,7 @@ function Impressum() {
                     (www.lpk-bw.de)
                   </a>
                 </p>
-                <p>Arztregister-Nummer:</p>
+                <p>Arztregister-Nummer: 5515798</p>
               </div>
               <p className="mt-20">
                 * Die Titel „Psychologische Psychotherapeutin&quot; und
