@@ -204,9 +204,9 @@ function Leistungen() {
               </p>
               <p>kulturellen Bedürfnisse berücksichtigt.</p>
             </div>
+            <Footer />
           </div>
         </section>
-        <Footer />
       </div>
     </>
   );
