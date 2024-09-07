@@ -12,6 +12,7 @@ import { Dance } from '@/components/leistungen/Dance';
 
 import Scroll from '@/components/scroll/Scroll';
 import { useMobile } from '@/components/context/IsMobileProvider';
+import Footer from '@/components/footer/footer';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -37,7 +38,7 @@ function Leistungen() {
     <>
       <div
         className={`w-full  ${
-          isMobile ? 'overflow-y-auto h-[400dvh] ' : 'overflow-y-hidden'
+          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
         } `}
       >
         <section className="w-full h-screen">
@@ -205,6 +206,7 @@ function Leistungen() {
             </div>
           </div>
         </section>
+        <Footer />
       </div>
     </>
   );

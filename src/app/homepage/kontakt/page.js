@@ -13,6 +13,8 @@ import { useMobile } from '@/components/context/IsMobileProvider';
 import Scroll from '@/components/scroll/Scroll';
 import { sendEmail } from '@/actions/sendEmail';
 import toast, { Toaster } from 'react-hot-toast';
+import Footer from '@/components/footer/footer';
+import Link from 'next/link';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -31,13 +33,13 @@ function Kontakt() {
   return (
     <>
       <div
-        className={`w-full h-screen  ${
+        className={`w-full ${
           isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
         } `}
       >
         <div
           className={`absolute  z-10 text-white w-full  flex py-12 ${
-            isMobile ? 'h-[100dvh]' : 'h-screen'
+            isMobile ? 'h-[100vh]' : 'h-screen'
           } `}
         >
           <div
@@ -110,6 +112,23 @@ function Kontakt() {
                 'in Arbeit Webseite'
               </a>{' '}
             </p>
+            <div className="border-t-[1px] w-full border-slate-500"></div>
+            <div className="flex items-center justify-end mx-auto">
+              <div className="gap-4 flex">
+                <Link
+                  className="text-white hover:text-red-300"
+                  href={'/homepage/impressum'}
+                >
+                  Impressum
+                </Link>
+                <Link
+                  className="text-white hover:text-red-300"
+                  href={'/homepage/datenschutzerklaerung'}
+                >
+                  Datenschutzerklärung
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
         {/* {' '}

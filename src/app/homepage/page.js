@@ -5,6 +5,7 @@ import Lightsource from '@/components/background/Lightsource';
 import { View } from '@/components/canvas/View';
 import { useMobile } from '@/components/context/IsMobileProvider';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
+import Footer from '@/components/footer/footer';
 import Brain from '@/components/homepage/brain/Brain';
 import BrainParticles from '@/components/homepage/brain/Particles';
 import DNA from '@/components/homepage/dna/DNA';
@@ -30,8 +31,8 @@ function Homepage() {
   return (
     <>
       <div
-        className={`w-full  ${
-          isMobile ? 'overflow-y-auto h-[350dvh]' : 'overflow-y-hidden'
+        className={`w-full ${
+          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
         } `}
       >
         <section className="w-full h-screen">
@@ -163,6 +164,7 @@ function Homepage() {
             </div>
           </div>
         </section>
+        <Footer />
       </div>
     </>
   );

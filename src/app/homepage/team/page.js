@@ -11,6 +11,7 @@ import { PositionalAudio } from '@react-three/drei';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
 
 import { useMobile } from '@/components/context/IsMobileProvider';
+import Footer from '@/components/footer/footer';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -25,9 +26,7 @@ function ProfilePage() {
     <>
       <div
         className={`w-full ${
-          isMobile
-            ? 'overflow-y-auto h-[580dvh]'
-            : 'overflow-y-hidden h-[340dvh] '
+          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
         } `}
       >
         <View className=" !fixed  top-0 left-0 flex h-screen w-full ">
@@ -167,6 +166,7 @@ function ProfilePage() {
                 <p>&#8226; Selbstzahler</p>
               </div>
             </div>
+            <Footer />
           </div>
 
           <div className="col-span-1"></div>

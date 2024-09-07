@@ -9,6 +9,7 @@ import { PositionalAudio } from '@react-three/drei';
 import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
 
 import { useMobile } from '@/components/context/IsMobileProvider';
+import Footer from '@/components/footer/footer';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
@@ -22,7 +23,7 @@ function Impressum() {
   return (
     <div
       className={`w-full  ${
-        isMobile ? 'overflow-y-auto h-[400dvh]' : 'overflow-y-hidden h-[240dvh]'
+        isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
       } `}
     >
       <View className=" !fixed  top-0 left-0 flex h-screen w-full ">
@@ -45,7 +46,7 @@ function Impressum() {
         <div className="col-span-1"></div>
         <div className="col-start-2 max-w-[1000px]">
           <div className="flex flex-col gap-4 mt-8">
-            <h2 className="text-4xl font-bold text-white underline underline-offset-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white underline underline-offset-4">
               Impressum
             </h2>
 
@@ -177,6 +178,7 @@ function Impressum() {
                 </a>
               </h2>
             </div>
+            <Footer />
           </div>
         </div>
 

@@ -9,10 +9,10 @@ export const meta = {
 
 export default function HomepageLayout({ children }) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="">
       <Navbar />
-      <main className="flex-grow">{children}</main>
-      <Footer />
+      <main className="">{children}</main>
+      {/* <Footer /> */}
     </div>
   );
 }
