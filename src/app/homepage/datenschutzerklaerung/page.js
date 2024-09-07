@@ -50,7 +50,7 @@ function Impressum() {
               Datenschutzerklärung
             </h2>
 
-            <div className="mt-14 mb-14 text-2xl text-stone-50 dark:text-gray-400">
+            <div className="mt-14 mb-14 text-xl md:text-2xl text-stone-50 dark:text-gray-400">
               <h1 className="text-3xl font-bold">
                 1. Datenschutz auf einen Blick
               </h1>

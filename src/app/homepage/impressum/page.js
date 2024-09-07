@@ -50,7 +50,7 @@ function Impressum() {
               Impressum
             </h2>
 
-            <div className="mt-14 mb-14 text-2xl text-stone-50 dark:text-gray-400">
+            <div className="mt-14 mb-14 text-xl md:text-2xl text-stone-50 dark:text-gray-400">
               <h2 className="text-2xl font-bold">
                 Anschrift & Erreichbarkeit:
               </h2>
