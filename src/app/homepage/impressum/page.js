@@ -13,7 +13,7 @@ import Footer from '@/components/footer/footer';
 
 const Common = dynamic(
   () => import('@/components/canvas/View').then((mod) => mod.Common),
-  { ssr: false }
+  { ssr: false },
 );
 
 function Impressum() {
@@ -61,7 +61,7 @@ function Impressum() {
                 <p>76646 Bruchsal</p>
                 <p>Telefon: 07251 / 7242112</p>
                 <p>Fax: 07251 / 7242113</p>
-                <p>E-Mail: hirtpraxis@gmail.com</p>
+                {/* <p>E-Mail: hirtpraxis@gmail.com</p> */}
                 <p>
                   Web:{' '}
                   <a
