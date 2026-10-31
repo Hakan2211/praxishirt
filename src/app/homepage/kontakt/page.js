@@ -1,282 +1,130 @@
 'use client';
 
-import React, { Suspense, useState } from 'react';
+import {
+  HiOutlineClock,
+  HiOutlineExternalLink,
+  HiOutlineLocationMarker,
+  HiOutlinePhone,
+} from 'react-icons/hi';
 
-import { View } from '@/components/canvas/View';
-import Background from '@/components/background/Background';
-import Lightsource from '@/components/background/Lightsource';
-import dynamic from 'next/dynamic';
+import SceneLayer from '@/components/ui/SceneLayer';
+import { PRACTICE } from '@/components/ui/navigation/navLinks';
 
-import { PositionalAudio } from '@react-three/drei';
-import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
-import { useMobile } from '@/components/context/IsMobileProvider';
-import Scroll from '@/components/scroll/Scroll';
-import { sendEmail } from '@/actions/sendEmail';
-import toast, { Toaster } from 'react-hot-toast';
-import Footer from '@/components/footer/footer';
-import Link from 'next/link';
-
-const Common = dynamic(
-  () => import('@/components/canvas/View').then((mod) => mod.Common),
-  { ssr: false }
-);
+function IconBadge({ children }) {
+  return (
+    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-rose/15 text-2xl text-brand-rose ring-1 ring-brand-rose/30">
+      {children}
+    </span>
+  );
+}
 
 function Kontakt() {
-  const { soundEnabled } = useSoundEnabled();
-
-  const { isMobile } = useMobile();
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
   return (
     <>
-      <div
-        className={`w-full ${
-          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
-        } `}
-      >
-        <div
-          className={`absolute  z-10 text-white w-full  flex py-12 ${
-            isMobile ? 'h-[100vh]' : 'h-screen'
-          } `}
-        >
-          <div
-            className={`space-y-8 max-w-xl  flex flex-col items-start  mx-auto p-8  rounded-lg ${
-              isMobile ? 'w-4/5' : 'w-full'
-            } `}
+      <SceneLayer />
+
+      <div className="relative z-10 container mx-auto flex min-h-[100svh] flex-col justify-center px-5 pb-20 pt-28 md:px-10 md:pt-36 lg:px-16">
+        <header className="max-w-2xl animate-fade-up">
+          <span className="eyebrow">Kontakt</span>
+          <h1 className="heading-praxis">Ich bin gerne für Sie da</h1>
+          <p className="mt-5 text-lg leading-relaxed text-zinc-300">
+            Für eine Terminvereinbarung erreichen Sie mich telefonisch zu den
+            unten genannten Sprechzeiten.
+          </p>
+        </header>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {/* Phone */}
+          <section
+            aria-labelledby="tel-heading"
+            className="glass-card flex animate-fade-up flex-col [animation-delay:120ms]"
           >
-            <h2
-              className={`font-bold text-center underline underline-offset-4 ${
-                isMobile ? 'text-xl' : 'text-4xl'
-              } `}
-            >
-              Telefonische Erreichbarkeit:
-            </h2>
-            <div
-              className={` text-center w-[100%] flex  ${
-                isMobile ? 'text-xl' : 'text-4xl'
-              } `}
-            >
-              <p>Tel. :</p>
-              <p className="ml-auto">07251 / 7242112 </p>
+            <div className="flex items-center gap-4">
+              <IconBadge>
+                <HiOutlinePhone />
+              </IconBadge>
+              <h2 id="tel-heading" className="font-display text-2xl text-white">
+                Telefonische Erreichbarkeit
+              </h2>
             </div>
 
-            <div
-              className={` text-center flex w-[100%] ${
-                isMobile ? 'text-xl' : 'text-4xl'
-              } `}
+            <a
+              href={PRACTICE.phoneHref}
+              className="group mt-8 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 transition-colors hover:border-brand-rose/60 hover:bg-brand-rose/10"
             >
-              <p>Mo - Fr</p>
-              <p className="ml-auto">12:00 - 12:30</p>
+              <span>
+                <span className="block text-xs uppercase tracking-[0.2em] text-zinc-400">
+                  Telefon
+                </span>
+                <span className="mt-1 block whitespace-nowrap text-xl font-semibold tracking-wide text-white sm:text-2xl md:text-3xl">
+                  {PRACTICE.phoneDisplay}
+                </span>
+              </span>
+              <span className="rounded-full bg-brand-rose px-4 py-2 text-sm font-semibold text-brand-deep transition-transform group-hover:scale-105">
+                Anrufen
+              </span>
+            </a>
+
+            <div className="mt-8">
+              <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-brand-rose">
+                <HiOutlineClock /> Sprechzeiten
+              </p>
+              <dl className="mt-3 divide-y divide-white/10">
+                {PRACTICE.hours.map(({ days, time }) => (
+                  <div
+                    key={days + time}
+                    className="flex items-center justify-between py-3 text-base md:text-lg"
+                  >
+                    <dt className="text-zinc-300">{days}</dt>
+                    <dd className="font-medium text-white">{time}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-            <div
-              className={` text-center flex w-[100%] ${
-                isMobile ? 'text-xl' : 'text-4xl'
-              } `}
-            >
-              <p>Fr</p> <p className="ml-auto">15:30 - 18:00</p>{' '}
+          </section>
+
+          {/* Address */}
+          <section
+            aria-labelledby="adresse-heading"
+            className="glass-card flex animate-fade-up flex-col [animation-delay:240ms]"
+          >
+            <div className="flex items-center gap-4">
+              <IconBadge>
+                <HiOutlineLocationMarker />
+              </IconBadge>
+              <h2
+                id="adresse-heading"
+                className="font-display text-2xl text-white"
+              >
+                Adresse
+              </h2>
             </div>
 
-            <h2
-              className={`font-bold text-center underline underline-offset-4 ${
-                isMobile ? 'text-xl' : 'text-4xl'
-              } `}
-            >
-              Adresse:
-            </h2>
-            <p className={`  ${isMobile ? 'text-xl' : 'text-4xl'} `}>
-              Filiz Hirt
-            </p>
-            <p className={` ${isMobile ? 'text-xl' : 'text-4xl'} `}>
-              Styrumstraße 20, 76646 Bruchsal
-            </p>
-            <p className={` ${isMobile ? 'text-xl' : 'text-4xl'} `}>
-              Google Maps Link:{' '}
+            <address className="mt-8 space-y-1 text-lg not-italic leading-relaxed text-zinc-200 md:text-xl">
+              <span className="block text-sm text-zinc-400">
+                {PRACTICE.name}
+              </span>
+              <span className="block font-semibold text-white">
+                {PRACTICE.owner}
+              </span>
+              <span className="block">{PRACTICE.street}</span>
+              <span className="block">{PRACTICE.city}</span>
+            </address>
+
+            <div className="mt-auto pt-8">
               <a
-                className="text-red-300 hover:text-red-500"
+                href={PRACTICE.mapsUrl}
                 target="_blank"
-                href="https://www.google.de/maps/place/Styrumstra%C3%9Fe+20,+76646+Bruchsal/@49.1278924,8.5952895,16z/data=!3m1!4b1!4m6!3m5!1s0x4797a3dfd93576c9:0xb49692b4fb0cbfd8!8m2!3d49.1278925!4d8.6001604!16s%2Fg%2F11bw3gl1ph?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D"
+                rel="noopener noreferrer"
+                className="btn-ghost w-full sm:w-auto"
               >
-                Styrumstraße 20, 76646 Bruchsal
-              </a>{' '}
-            </p>
-            <p className={` ${isMobile ? 'text-xl' : 'text-4xl'} `}>
-              Meine alte{' '}
-              <a
-                className="text-red-300 hover:text-red-500"
-                target="_blank"
-                href="https://praxishirt.netlify.app/"
-              >
-                'in Arbeit Webseite'
-              </a>{' '}
-            </p>
-            <div className="border-t-[1px] w-full border-slate-500"></div>
-            <div className="flex items-center justify-end mx-auto">
-              <div className="gap-4 flex">
-                <Link
-                  className="text-white hover:text-red-300"
-                  href={'/homepage/impressum'}
-                >
-                  Impressum
-                </Link>
-                <Link
-                  className="text-white hover:text-red-300"
-                  href={'/homepage/datenschutzerklaerung'}
-                >
-                  Datenschutzerklärung
-                </Link>
-              </div>
+                Route in Google Maps planen
+                <HiOutlineExternalLink aria-hidden />
+                <span className="sr-only">(öffnet in neuem Tab)</span>
+              </a>
             </div>
-          </div>
+          </section>
         </div>
-        {/* {' '}
-      <div
-        className={`absolute  z-10 text-white w-full  flex items-center justify-center py-12 ${
-          isMobile ? 'h-[150vh]' : 'h-screen'
-        } `}
-      >
-        <div
-          className={`space-y-8 max-w-xl  mx-auto p-8 bg-gray-800 rounded-lg ${
-            isMobile ? 'w-4/5' : 'w-full'
-          } `}
-        >
-          {' '}
-          <Toaster position="top-right" />
-          <h2
-            className={`font-bold text-center ${
-              isMobile ? 'text-xl' : 'text-5xl'
-            } `}
-          >
-            Kontaktiere uns
-          </h2>
-          <form
-            action={async (formData) => {
-              const { data, error } = await sendEmail(formData);
-
-              if (error) {
-                toast.error('Nachricht konnte nicht gesendet werden', {
-                  error,
-                });
-                return;
-              }
-              toast.success('Nachricht wurde gesendet');
-              setName('');
-              setEmail('');
-              setMessage('');
-            }}
-            className="space-y-5"
-          >
-            <div className="space-y-2 flex flex-col">
-              <label
-                className={`${isMobile ? 'text-xl' : 'text-3xl'} `}
-                htmlFor="name"
-              >
-                Name
-              </label>
-              <input
-                name="senderName"
-                value={name}
-                maxLength={50}
-                onChange={(e) => setName(e.target.value)}
-                className={`bg-gray-700 rounded-lg text-2xl p-3 h-12 text-white border-none  placeholder:p-3 ${
-                  isMobile ? 'placeholder:text-lg' : 'placeholder:text-2xl'
-                } `}
-                id="name"
-                placeholder="Gib deinen Namen ein"
-              />
-            </div>
-            <div className="space-y-2 flex flex-col">
-              <label
-                className={`text-3xl ${isMobile ? 'text-xl' : ''} `}
-                htmlFor="email"
-              >
-                Email
-              </label>
-              <input
-                name="senderEmail"
-                required
-                value={email}
-                maxLength={500}
-                onChange={(e) => setEmail(e.target.value)}
-                className={`bg-gray-700 rounded-lg text-2xl p-3 h-12 text-white border-none  placeholder:p-3 ${
-                  isMobile ? 'placeholder:text-lg' : 'placeholder:text-2xl'
-                } `}
-                id="email"
-                placeholder="Gib deine Email-Adresse ein"
-                type="email"
-              />
-            </div>
-            <div className="space-y-2 flex flex-col">
-              <label
-                className={`${isMobile ? 'text-xl' : 'text-3xl'} `}
-                htmlFor="message"
-              >
-                Nachricht
-              </label>
-              <textarea
-                name="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className={`bg-gray-700 rounded-lg text-2xl p-3 text-white border-none min-h-[100px] h-44  placeholder:p-3 ${
-                  isMobile ? 'placeholder:text-lg' : 'placeholder:text-2xl'
-                } `}
-                id="message"
-                placeholder="Gib deine Nachricht ein"
-              />
-            </div>
-            <button
-              type="submit"
-              className={`w-full h-12  rounded-lg bg-red-300 hover:bg-red-400 transition-colors ${
-                isMobile ? 'text-xl' : 'text-3xl'
-              }`}
-            >
-              Senden
-            </button>
-          </form>
-        </div>
-      </div>{' '}
-      <div className="absolute translate-y-96 md:translate-y-0 bottom-0 right-10 md:right-[660px] z-10 duration-300 ease-in-out transition-colors hover:text-red-300 hover:cursor-pointer  text-slate-50">
-        <a href="https://www.praxishirt.de" target="__blank">
-          <span>Impressum</span>
-        </a>
-      </div> */}
-        <View
-          className={`!fixed  top-0 left-0 flex  w-full ${
-            isMobile ? 'h-[200vh]' : 'h-screen'
-          }  `}
-        >
-          {soundEnabled && (
-            <PositionalAudio
-              distance={2}
-              autoplay
-              loop
-              url="../../../audio_background/audiocoffee.wav"
-            />
-          )}
-          <Common />
-          <Suspense fallback={null}>
-            <Background />
-            <Lightsource />
-          </Suspense>
-          {/* {isMobile ? (
-          <>
-            <Bird
-              position={[0.05, 0.5, 3]}
-              scale={0.08}
-              rotation={[0, -Math.PI / 2 + 200, 0]}
-            />
-            <Scroll />
-          </>
-        ) : (
-          <Bird
-            position={[1.2, -0.5, 3]}
-            scale={0.15}
-            rotation={[0, -Math.PI / 2 + 200, 0]}
-          />
-        )} */}
-        </View>
       </div>
     </>
   );

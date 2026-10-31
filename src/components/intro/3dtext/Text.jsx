@@ -12,7 +12,7 @@ export default function HeadlineText3D({ position }) {
     <>
       <Float floatIntensity={0.4} speed={3}>
         <Text3D
-          font="../../fonts/Aoboshi One_Regular.json"
+          font="/fonts/Aoboshi One_Regular.json"
           size={0.2}
           height={0.05}
           position={position}

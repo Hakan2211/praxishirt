@@ -1,11 +1,10 @@
 'use client';
 
-import Background from '@/components/background/Background';
-import Lightsource from '@/components/background/Lightsource';
-import { View } from '@/components/canvas/View';
+import Link from 'next/link';
+import { Suspense } from 'react';
+import { HiArrowRight } from 'react-icons/hi';
+
 import { useMobile } from '@/components/context/IsMobileProvider';
-import { useSoundEnabled } from '@/components/context/SoundEnabledProvider';
-import Footer from '@/components/footer/footer';
 import Brain from '@/components/homepage/brain/Brain';
 import BrainParticles from '@/components/homepage/brain/Particles';
 import DNA from '@/components/homepage/dna/DNA';
@@ -13,159 +12,132 @@ import DNAParticles from '@/components/homepage/dna/DNAParticles';
 import Heart from '@/components/homepage/heart/Heart';
 import HeartParticles from '@/components/homepage/heart/HeartParticles';
 import Scroll from '@/components/scroll/Scroll';
+import SceneLayer from '@/components/ui/SceneLayer';
+import Section from '@/components/ui/Section';
 
-import { PositionalAudio } from '@react-three/drei';
+// World-space distance between the stacked models; must match Scroll spacing.
+const SPACING_DESKTOP = 1.2;
+const SPACING_MOBILE = 1.1;
 
-import dynamic from 'next/dynamic';
-import React, { Suspense } from 'react';
+function Models({ isMobile }) {
+  const x = isMobile ? 0 : 0.6;
+  const brainY = isMobile ? 0.2 : 0.1;
+  const s = isMobile ? SPACING_MOBILE : SPACING_DESKTOP;
+  const heartProps = {
+    scale: isMobile ? 0.3 : 0.45,
+    position: [x, brainY - s - 0.1, 4],
+    rotation: [-Math.PI / 2, 0, 120],
+  };
+  return (
+    <Suspense fallback={null}>
+      <Brain position={[x, brainY, 4]} scale={isMobile ? 2 : 3} />
+      <BrainParticles position={[x, brainY, 4]} scale={isMobile ? 2 : 3} />
+      <Heart {...heartProps} />
+      <HeartParticles {...heartProps} />
+      <DNA position={[x, brainY - 2 * s - 0.1, 4]} scale={isMobile ? 1.5 : 2} />
+      <DNAParticles
+        position={[x, brainY - 2 * s - 0.1, 4]}
+        scale={isMobile ? 1.5 : 2}
+      />
+    </Suspense>
+  );
+}
 
-const Common = dynamic(
-  () => import('@/components/canvas/View').then((mod) => mod.Common),
-  { ssr: false }
-);
+function ScrollHint() {
+  return (
+    <a
+      href="#herz"
+      aria-label="Weiter nach unten scrollen"
+      className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.3em] text-zinc-300 transition-colors hover:text-brand-rose md:flex"
+    >
+      Entdecken
+      <span className="relative flex h-10 w-6 justify-center rounded-full border border-current pt-2">
+        <span className="h-2 w-1 animate-scroll-dot rounded-full bg-current" />
+      </span>
+    </a>
+  );
+}
 
 function Homepage() {
-  const { soundEnabled } = useSoundEnabled();
   const { isMobile } = useMobile();
 
   return (
     <>
-      <div
-        className={`w-full ${
-          isMobile ? 'overflow-y-auto' : 'overflow-y-hidden'
-        } `}
+      <SceneLayer>
+        <Models isMobile={isMobile} />
+        <Scroll spacing={isMobile ? SPACING_MOBILE : SPACING_DESKTOP} />
+      </SceneLayer>
+
+      <Section
+        id="kopf"
+        innerClassName="flex items-end md:items-center"
+        overlay={<ScrollHint />}
       >
-        <section className="w-full h-screen">
-          <div
-            className={`z-10 text-white absolute  ${
-              isMobile
-                ? 'left-1 p-10 w-full top-96 h-screen mt-0 translate-y-20'
-                : 'top-80 left-72 mt-5 p-16 w-2/3 h-2/4'
-            } `}
-          >
-            <div className="text-xl leading-9 text-zinc-200 ">
-              <p>In den Tiefen unseres Gehirns verbirgt</p>
-              <p>sich der Schlüssel zur unserer inneren Stärke.</p>
-              <p>Die Psychotherapie öffnet die Tore zur Veränderung</p>
-              <p>und zum Wachstum, indem wir die einzigartige Landkarte</p>
-              <p>der Gedanken gemeinsam erforschen.</p>
-              <h2>Hier beginnt die Reise zur ganzheitlichen Gesundheit.</h2>
-            </div>
+        <div className="glass-card max-w-xl max-md:mt-[38vh]">
+          <span className="eyebrow">Psychotherapie in Bruchsal</span>
+          <h1 className="heading-praxis">
+            Der Schlüssel zu unserer inneren Stärke
+          </h1>
+          <div className="prose-praxis mt-6">
+            <p>
+              In den Tiefen unseres Gehirns verbirgt sich der Schlüssel zu
+              unserer inneren Stärke. Die Psychotherapie öffnet die Tore zur
+              Veränderung und zum Wachstum, indem wir die einzigartige Landkarte
+              der Gedanken gemeinsam erforschen.
+            </p>
+            <p className="font-medium text-white">
+              Hier beginnt die Reise zur ganzheitlichen Gesundheit.
+            </p>
           </div>
+        </div>
+      </Section>
 
-          <View className=" !fixed  top-0 left-0 flex h-screen w-full ">
-            {soundEnabled && (
-              <PositionalAudio
-                distance={2}
-                autoplay
-                loop
-                url="../../../audio_background/audiocoffee.wav"
-              />
-            )}
-            <Common />
-
-            <Suspense fallback={null}>
-              {isMobile ? (
-                <Brain position={[0, 0.2, 4]} scale={2} />
-              ) : (
-                <Brain position={[0.5, 0.1, 4]} scale={3} />
-              )}
-
-              {isMobile ? (
-                <BrainParticles position={[0, 0.2, 4]} scale={2} />
-              ) : (
-                <BrainParticles position={[0.5, 0.1, 4]} scale={3} />
-              )}
-
-              {isMobile ? (
-                <Heart
-                  scale={0.3}
-                  position={[0, -1.0, 4]}
-                  rotation={[-Math.PI / 2, 0, 120]}
-                />
-              ) : (
-                <Heart
-                  scale={0.45}
-                  position={[0.5, -1.2, 4]}
-                  rotation={[-Math.PI / 2, 0, 120]}
-                />
-              )}
-
-              {isMobile ? (
-                <HeartParticles
-                  scale={0.3}
-                  position={[0, -1, 4]}
-                  rotation={[-Math.PI / 2, 0, 120]}
-                />
-              ) : (
-                <HeartParticles
-                  scale={0.45}
-                  position={[0.5, -1.2, 4]}
-                  rotation={[-Math.PI / 2, 0, 120]}
-                />
-              )}
-
-              {isMobile ? (
-                <DNA position={[0, -2.0, 4]} scale={1.5} />
-              ) : (
-                <DNA position={[0.5, -2.3, 4]} scale={2} />
-              )}
-              {isMobile ? (
-                <DNAParticles position={[0, -2.0, 4]} scale={1.5} />
-              ) : (
-                <DNAParticles position={[0.5, -2.3, 4]} scale={2} />
-              )}
-            </Suspense>
-
-            <Suspense fallback={null}>
-              <Background />
-              <Lightsource />
-            </Suspense>
-            <Scroll />
-          </View>
-        </section>
-        <section className="w-full h-screen">
-          <div
-            className={`z-10 text-white absolute  ${
-              isMobile
-                ? 'w-full p-10 left-1 h-screen mt-0 translate-y-96'
-                : 'top-[90rem] left-72 mt-5 p-16 w-2/3 h-2/4'
-            } `}
-          >
-            <div className="text-xl leading-9 text-zinc-200 ">
-              <p>In meiner Praxis schlagen Herz, Kopf und Bauch im Einklang.</p>
-              <p>Das Ziel ist es, Sie emotional zu unterstützen,</p>
-              <p>um Ihr inneres Gleichgewicht zu finden.</p>
-              <p>Ich möchte mit Ihnen gemeinsam Ihre Ressourcen stärken,</p>
-              <p>an Ihren Zielen arbeiten und Sie bei der Gestaltung</p>
-              <p>
-                eines selbstbestimmten und zufriedenen Lebens zu unterstützen.
-              </p>
-            </div>
+      <Section id="herz" innerClassName="flex items-end md:items-center">
+        <div className="glass-card max-w-xl max-md:mt-[38vh]">
+          <span className="eyebrow">Herz, Kopf &amp; Bauch</span>
+          <h2 className="heading-praxis">Im Einklang mit sich selbst</h2>
+          <div className="prose-praxis mt-6">
+            <p>
+              In meiner Praxis schlagen Herz, Kopf und Bauch im Einklang. Das
+              Ziel ist es, Sie emotional zu unterstützen, damit Sie Ihr inneres
+              Gleichgewicht finden.
+            </p>
+            <p>
+              Ich möchte mit Ihnen gemeinsam Ihre Ressourcen stärken, an Ihren
+              Zielen arbeiten und Sie bei der Gestaltung eines selbstbestimmten
+              und zufriedenen Lebens unterstützen.
+            </p>
           </div>
-        </section>
-        <section className="w-full h-screen">
-          <div
-            className={`z-10 text-white absolute  ${
-              isMobile
-                ? 'left-1 p-10 w-full min-h-0 h-4/5 mt-0 translate-y-96'
-                : 'top-[165rem] left-72 mt-5 p-16 w-2/3 h-2/4'
-            }  `}
-          >
-            <div className="text-xl leading-9 text-zinc-200 ">
-              <p>Ähnlich wie jeder DNA-Strang bei jedem Menschen</p>
-              <p>einzigartig ist, ist auch bei jedem Menschen die eigene</p>
-              <p>Emotion, Denk- und Verhaltensmuster einzigartig.</p>
-              <p>Jeder Mensch hat die Kapazität zu lernen und</p>
-              <p>sich zu verändern, zu wachsen und zu einem</p>
-              <p>selbstbestimmten Wesen zu werden.</p>
-              <p>Es geht um die Veränderung in der gesamten Art</p>
-              <p>der Organisation und der Art der Reaktion.</p>
-            </div>
+        </div>
+      </Section>
+
+      <Section id="dna" innerClassName="flex items-end md:items-center">
+        <div className="glass-card max-w-xl max-md:mt-[38vh]">
+          <span className="eyebrow">Einzigartig</span>
+          <h2 className="heading-praxis">Jeder Mensch kann wachsen</h2>
+          <div className="prose-praxis mt-6">
+            <p>
+              Ähnlich wie jeder DNA-Strang bei jedem Menschen einzigartig ist,
+              sind auch die eigenen Emotionen, Denk- und Verhaltensmuster
+              einzigartig.
+            </p>
+            <p>
+              Jeder Mensch hat die Kapazität zu lernen, sich zu verändern, zu
+              wachsen und zu einem selbstbestimmten Wesen zu werden. Es geht um
+              die Veränderung in der gesamten Art der Organisation und der Art
+              der Reaktion.
+            </p>
           </div>
-        </section>
-        <Footer />
-      </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/homepage/leistungen" className="btn-primary">
+              Meine Leistungen <HiArrowRight />
+            </Link>
+            <Link href="/homepage/kontakt" className="btn-ghost">
+              Kontakt aufnehmen
+            </Link>
+          </div>
+        </div>
+      </Section>
     </>
   );
 }

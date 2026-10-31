@@ -1,19 +1,20 @@
 import Image from 'next/image';
-import React from 'react';
 
 export default function Logo() {
   return (
-    <div className="flex items-center w-64 justify-evenly hover:cursor-pointer">
+    <span className="flex items-center gap-3">
       <Image
         src="/logo/LogoPraxisHirt.png"
-        width={80}
-        height={80}
-        alt="Logo of the Homepage"
+        width={56}
+        height={56}
+        alt=""
+        priority
+        className="h-11 w-11 transition-transform duration-500 group-hover:rotate-6 md:h-14 md:w-14"
       />
-      <h3 className="tracking-widest text-white">
-        <span className="text-red-300">P</span>raxis
-        <span className="text-red-300">H</span>irt
-      </h3>
-    </div>
+      <span className="font-display text-lg tracking-[0.2em] text-white md:text-xl">
+        <span className="text-brand-rose">P</span>raxis
+        <span className="text-brand-rose">H</span>irt
+      </span>
+    </span>
   );
 }

@@ -2,7 +2,7 @@ export default function robots() {
   return {
     rules: {
       userAgent: '*',
-      allow: ['/', '/homepage', '/homepage/team', '/homepage/leistungen'],
+      allow: '/',
       disallow: [],
     },
     sitemap: 'https://praxishirt.de/sitemap.xml',

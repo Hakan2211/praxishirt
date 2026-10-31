@@ -1,18 +1,21 @@
 import Footer from '@/components/footer/footer';
 import Navbar from '@/components/ui/navigation/Navbar';
-import React from 'react';
 
-export const meta = {
-  title: 'Filiz Hirt - Homepage',
-  description: 'Filiz Hirt - Homepage - Praxis Hirt',
+export const metadata = {
+  title: {
+    default: 'Willkommen | Praxis Hirt Bruchsal',
+    template: '%s | Praxis Hirt Bruchsal',
+  },
 };
 
 export default function HomepageLayout({ children }) {
   return (
-    <div className="">
+    <>
       <Navbar />
-      <main className="">{children}</main>
-      {/* <Footer /> */}
-    </div>
+      <main id="inhalt" className="relative">
+        {children}
+      </main>
+      <Footer />
+    </>
   );
 }
