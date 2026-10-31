@@ -13,7 +13,6 @@ export const PRACTICE = {
   phoneHref: 'tel:+4972517242112',
   hours: [
     { days: 'Mo – Fr', time: '12:00 – 12:30 Uhr' },
-    { days: 'Fr', time: '15:30 – 18:00 Uhr' },
   ],
   mapsUrl:
     'https://www.google.de/maps/place/Styrumstra%C3%9Fe+20,+76646+Bruchsal/@49.1278924,8.5952895,16z/data=!3m1!4b1!4m6!3m5!1s0x4797a3dfd93576c9:0xb49692b4fb0cbfd8!8m2!3d49.1278925!4d8.6001604!16s%2Fg%2F11bw3gl1ph',
